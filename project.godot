@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Factory Wars"
-config/icon="res://icon.png"
+config/icon="res://assets/icons/icon.png"
+
+[node]
+
+name_num_separator=3
+name_casing=1
 
 [rendering]
 
