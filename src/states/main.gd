@@ -4,6 +4,7 @@ onready var Map = preload("res://src/maps/lab.tscn")
 
 func _ready():
 	var map = Map.instance()
+	map.name = "map"
 	add_child(map)
 
 func _input(event):

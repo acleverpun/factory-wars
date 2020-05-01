@@ -1,3 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/components/round.tscn" type="PackedScene" id=1]
 
 [node name="lab" type="Node2D"]
+
+[node name="polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 496, 272 )
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[node name="round" parent="." instance=ExtResource( 1 )]
