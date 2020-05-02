@@ -6,6 +6,8 @@ static func isClick(event, button = 1):
 	)
 
 static func hasPoint(polygon, point):
+	if not polygon.has_method("get_polygon"): return false
+
 	var verts = polygon.get_polygon()
 	var isInside = false;
 
