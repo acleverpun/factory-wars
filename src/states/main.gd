@@ -19,5 +19,7 @@ func _input(event):
 		var nodes = map.get_children()
 
 		for node in nodes:
+			if not node.has_node('selectable'): break
+
 			if utils.hasPoint(node, event.get_position()):
 				print(node.name)
