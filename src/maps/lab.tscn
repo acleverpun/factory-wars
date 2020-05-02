@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/components/round.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/components/selectable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/structures/generator.gd" type="Script" id=3]
 
 [node name="lab" type="Node2D"]
 
 [node name="generator" type="Polygon2D" parent="."]
 position = Vector2( 496, 272 )
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+script = ExtResource( 3 )
 
 [node name="selectable" parent="generator" instance=ExtResource( 2 )]
 

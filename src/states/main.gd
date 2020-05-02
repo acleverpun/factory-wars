@@ -1,10 +1,11 @@
 extends ViewportContainer
 
-const utils = preload('res://src/utils.gd')
+const utils = preload("res://src/utils.gd")
 
 onready var Map = preload("res://src/maps/lab.tscn")
 
 var map
+# var selected
 
 func _ready():
 	map = Map.instance()
@@ -19,7 +20,12 @@ func _input(event):
 		var nodes = map.get_children()
 
 		for node in nodes:
-			if not node.has_node('selectable'): break
+			if not node.has_node("selectable"): break
 
 			if utils.hasPoint(node, event.get_position()):
-				print(node.name)
+				# if selected == node: return
+				# if selected: selected.get_node("selectable").deselect()
+				# if node.get_node("selectable").toggle():
+				# 	selected = node
+				node.get_node("selectable").select()
+				break
