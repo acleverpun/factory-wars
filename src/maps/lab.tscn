@@ -4,7 +4,7 @@
 
 [node name="lab" type="Node2D"]
 
-[node name="polygon2D" type="Polygon2D" parent="."]
+[node name="generator" type="Polygon2D" parent="."]
 position = Vector2( 496, 272 )
 polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
