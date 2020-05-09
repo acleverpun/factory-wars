@@ -2,27 +2,28 @@ extends ViewportContainer
 
 const utils = preload("res://src/utils.gd")
 
-onready var Map = preload("res://src/maps/lab.tscn")
+onready var Map := preload("res://src/maps/lab.tscn")
 
-var map
-# var selected
+var map: Node
+# var selected: Node
 
 func _ready():
 	map = Map.instance()
 	map.name = "map"
 	add_child(map)
 
-func _input(event):
+func _input(event: InputEvent):
 	if Input.is_action_pressed("game.close"): get_tree().quit()
 	elif Input.is_action_pressed("game.restart"): get_tree().reload_current_scene()
 
 	if utils.isClick(event):
-		var nodes = map.get_children()
+		var click := event as InputEventMouseButton
+		var nodes: Array = map.get_children()
 
 		for node in nodes:
 			if not node.has_node("selectable"): break
 
-			if utils.hasPoint(node, event.get_position()):
+			if utils.hasPoint(node, click.get_position()):
 				# if selected == node: return
 				# if selected: selected.get_node("selectable").deselect()
 				# if node.get_node("selectable").toggle():

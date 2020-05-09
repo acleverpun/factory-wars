@@ -3,9 +3,9 @@ extends Node
 signal select
 signal deselect
 
-export var selected = false
+onready var parent := get_parent()
 
-onready var parent = get_parent()
+var selected := false
 
 func _ready():
 	if parent.has_method("onSelect"): connect("select", parent, "onSelect")
