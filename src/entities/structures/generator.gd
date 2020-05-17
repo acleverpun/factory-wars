@@ -1,7 +1,6 @@
 extends Polygon2D
 
-func onSelect():
-	print("selected: " + self.name)
+onready var value := 0
 
-func onDeselect():
-	print("deselected: ", self.name)
+func onSelect():
+	prints(value)

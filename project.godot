@@ -19,6 +19,10 @@ config/name="Factory Wars"
 run/main_scene="res://src/states/main.tscn"
 config/icon="res://assets/icons/icon.png"
 
+[autoload]
+
+events="*res://src/systems/events.gd"
+
 [input]
 
 game.close={
