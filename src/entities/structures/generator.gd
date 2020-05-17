@@ -4,7 +4,6 @@ export var value := 0
 export var gain := 10
 
 func _ready():
-	events.needs([ "round:next" ])
 	events.on("round:next", self, "onRound")
 
 func onRound(currentRound: int):
