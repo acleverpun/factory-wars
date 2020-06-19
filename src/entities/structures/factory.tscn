@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/components/selectable.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/structures/factory.gd" type="Script" id=2]
+[ext_resource path="res://src/components/selectable.tscn" type="PackedScene" id=3]
+
+[node name="factory" type="Polygon2D"]
+position = Vector2( 640, 256 )
+color = Color( 0.172549, 0.67451, 0.113725, 1 )
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+script = ExtResource( 2 )
+
+[node name="selectable" type="Area2D" parent="." instance=ExtResource( 3 )]
+script = ExtResource( 1 )
