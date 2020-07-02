@@ -1,22 +1,18 @@
 tool
 extends Polygon2D
 
+export(int, FLAGS, "North", "East", "South", "West") var inputs = 0
+export(int, FLAGS, "North", "East", "South", "West") var outputs = 0
+
 onready var Arrow := preload("res://src/gui/arrow.tscn")
+
+enum IOType { INPUT, OUTPUT }
 
 const NONE = 0
 const NORTH = 1
 const EAST = 1 << 1
 const SOUTH = 1 << 2
 const WEST = 1 << 3
-
-export(int, FLAGS, "North", "East", "South", "West") var inputs = 0
-export(int, FLAGS, "North", "East", "South", "West") var outputs = 0
-
-enum IOType { INPUT, OUTPUT }
-
-func _ready():
-	prints(self.get_parent().name, inputs)
-	pass
 
 func _draw():
 	if outputs & NORTH:
