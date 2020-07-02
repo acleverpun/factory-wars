@@ -1,3 +1,4 @@
+tool
 extends Polygon2D
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
