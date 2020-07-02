@@ -1,5 +1,7 @@
 extends Polygon2D
 
+onready var Arrow := preload("res://src/gui/arrow.tscn")
+
 const NONE = 0
 const NORTH = 1
 const EAST = 1 << 1
@@ -23,10 +25,15 @@ func _ready():
 
 func _draw():
 	if inputs & NORTH:
-		draw_line(center, center + up, inputColor, 1)
+		drawArrow(-PI/2)
 	if inputs & SOUTH:
-		draw_line(center, center + down, inputColor, 1)
+		drawArrow(PI/2)
 	if inputs & WEST:
-		draw_line(center, center + left, inputColor, 1)
+		drawArrow(PI)
 	if inputs & EAST:
-		draw_line(center, center + right, inputColor, 1)
+		drawArrow(0)
+
+func drawArrow(angle: float):
+	var arrow = Arrow.instance()
+	arrow.rotate(angle)
+	add_child(arrow)
