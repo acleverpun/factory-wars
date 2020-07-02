@@ -37,8 +37,9 @@ func _draw():
 		drawArrow(0, IOType.INPUT)
 
 func drawArrow(angle: float, ioType: int):
-	var color = Color.orange if ioType == IOType.INPUT else Color.green
-	var arrow = Arrow.instance()
+	var color := Color.tomato if ioType == IOType.INPUT else Color.lawngreen
+	var arrow := Arrow.instance()
+	color.a = 0.8
 	arrow.rotate(angle)
 	arrow.find_node("body").color = color
 
