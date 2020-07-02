@@ -1,4 +1,11 @@
 [gd_scene format=2]
 
-[node name="arrow" type="Polygon2D"]
+[node name="arrow" type="Node2D"]
+
+[node name="center" type="Position2D" parent="."]
+position = Vector2( 16, 0 )
+
+[node name="body" type="Polygon2D" parent="center"]
+position = Vector2( -16, 0 )
+offset = Vector2( 4, 0 )
 polygon = PoolVector2Array( 8, -2, 16, -2, 16, -4, 20, 0, 16, 4, 16, 2, 8, 2 )
