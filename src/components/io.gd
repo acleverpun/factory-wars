@@ -19,31 +19,35 @@ const inputColor = Color8(255, 255, 0, 255)
 export(int, FLAGS, "North", "East", "South", "West") var inputs = 0
 export(int, FLAGS, "North", "East", "South", "West") var outputs = 0
 
+enum IOType { INPUT, OUTPUT }
+
 func _ready():
 	prints(self.get_parent().name, inputs)
 	pass
 
 func _draw():
 	if inputs & NORTH:
-		drawArrow(-PI/2, Color.orange)
+		drawArrow(-PI/2, IOType.INPUT)
 	if inputs & SOUTH:
-		drawArrow(PI/2, Color.orange)
+		drawArrow(PI/2, IOType.INPUT)
 	if inputs & WEST:
-		drawArrow(PI, Color.orange)
+		drawArrow(PI, IOType.INPUT)
 	if inputs & EAST:
-		drawArrow(0, Color.orange)
+		drawArrow(0, IOType.INPUT)
 
 	if outputs & NORTH:
-		drawArrow(-PI/2, Color.green)
+		drawArrow(-PI/2, IOType.OUTPUT)
 	if outputs & SOUTH:
-		drawArrow(PI/2, Color.green)
+		drawArrow(PI/2, IOType.OUTPUT)
 	if outputs & WEST:
-		drawArrow(PI, Color.green)
+		drawArrow(PI, IOType.OUTPUT)
 	if outputs & EAST:
-		drawArrow(0, Color.green)
+		drawArrow(0, IOType.OUTPUT)
 
-func drawArrow(angle: float, color: Color):
+func drawArrow(angle: float, ioType: int):
+	var color = Color.orange if ioType == IOType.INPUT else Color.green
 	var arrow = Arrow.instance()
 	arrow.rotate(angle)
 	arrow.color = color
+
 	add_child(arrow)
