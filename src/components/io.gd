@@ -20,7 +20,7 @@ export(int, FLAGS, "North", "East", "South", "West") var inputs = 0
 export(int, FLAGS, "North", "East", "South", "West") var outputs = 0
 
 func _ready():
-	prints(inputs, NORTH, EAST, SOUTH, WEST)
+	prints(self.get_parent().name, inputs)
 	pass
 
 func _draw():

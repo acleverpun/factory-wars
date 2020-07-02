@@ -6,4 +6,3 @@
 color = Color( 0.360784, 0.12549, 0.12549, 0.207843 )
 polygon = PoolVector2Array( -16, -16, 16, -16, 16, -16, 16, 16, -16, 16 )
 script = ExtResource( 1 )
-inputs = 8

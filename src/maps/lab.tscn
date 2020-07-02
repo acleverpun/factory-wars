@@ -7,10 +7,101 @@
 [node name="lab" type="Node2D"]
 
 [node name="factory" parent="." instance=ExtResource( 3 )]
-position = Vector2( 640, 256 )
+position = Vector2( 640, 128 )
 
 [node name="generator" parent="." instance=ExtResource( 4 )]
-position = Vector2( 256, 256 )
+position = Vector2( 256, 128 )
 
 [node name="io" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 256 )
+inputs = 3
+
+[node name="io-22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 128 )
+
+[node name="io-2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 256 )
+inputs = 1
+
+[node name="io-3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 256 )
+inputs = 2
+
+[node name="io-4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 256 )
+inputs = 4
+
+[node name="io-5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 256 )
+inputs = 8
+
+[node name="io-6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 256 )
+inputs = 15
+
+[node name="io-7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 896, 256 )
+inputs = 12
+
+[node name="io-8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 384 )
+outputs = 3
+
+[node name="io-9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 384 )
+outputs = 1
+
+[node name="io-10" parent="." instance=ExtResource( 1 )]
 position = Vector2( 384, 384 )
+outputs = 2
+
+[node name="io-11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 384 )
+outputs = 4
+
+[node name="io-12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 384 )
+outputs = 8
+
+[node name="io-13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 384 )
+outputs = 15
+
+[node name="io-14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 896, 384 )
+outputs = 12
+
+[node name="io-15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 512 )
+inputs = 3
+outputs = 3
+
+[node name="io-16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 512 )
+inputs = 1
+outputs = 1
+
+[node name="io-17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 512 )
+inputs = 2
+outputs = 2
+
+[node name="io-18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 512 )
+inputs = 4
+outputs = 4
+
+[node name="io-19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 512 )
+inputs = 8
+outputs = 8
+
+[node name="io-20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 512 )
+inputs = 15
+outputs = 15
+
+[node name="io-21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 896, 512 )
+inputs = 12
+outputs = 3
