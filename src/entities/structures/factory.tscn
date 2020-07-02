@@ -5,11 +5,11 @@
 [ext_resource path="res://src/components/selectable.tscn" type="PackedScene" id=3]
 
 [node name="factory" type="Polygon2D"]
-position = Vector2( 640, 256 )
 color = Color( 0.172549, 0.67451, 0.113725, 1 )
-polygon = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
 script = ExtResource( 2 )
 
 [node name="selectable" parent="." instance=ExtResource( 3 )]
 
 [node name="io" parent="." instance=ExtResource( 1 )]
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )

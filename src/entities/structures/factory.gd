@@ -9,5 +9,5 @@ func onSelect():
 
 func spawn():
 	var unit = Unit.instance()
-	unit.position = self.position + Vector2(0, 16)
+	unit.position = self.position + Vector2(0, 32)
 	parent.add_child(unit)
