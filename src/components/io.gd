@@ -25,15 +25,25 @@ func _ready():
 
 func _draw():
 	if inputs & NORTH:
-		drawArrow(-PI/2)
+		drawArrow(-PI/2, Color.orange)
 	if inputs & SOUTH:
-		drawArrow(PI/2)
+		drawArrow(PI/2, Color.orange)
 	if inputs & WEST:
-		drawArrow(PI)
+		drawArrow(PI, Color.orange)
 	if inputs & EAST:
-		drawArrow(0)
+		drawArrow(0, Color.orange)
 
-func drawArrow(angle: float):
+	if outputs & NORTH:
+		drawArrow(-PI/2, Color.green)
+	if outputs & SOUTH:
+		drawArrow(PI/2, Color.green)
+	if outputs & WEST:
+		drawArrow(PI, Color.green)
+	if outputs & EAST:
+		drawArrow(0, Color.green)
+
+func drawArrow(angle: float, color: Color):
 	var arrow = Arrow.instance()
 	arrow.rotate(angle)
+	arrow.color = color
 	add_child(arrow)
