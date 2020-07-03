@@ -1,8 +1,8 @@
 tool
 extends Polygon2D
 
-export(int, FLAGS, "east", "north", "west", "south") var inputs = 0
-export(int, FLAGS, "east", "north", "west", "south") var outputs = 0
+export(int, FLAGS, "east", "south", "west", "north") var inputs = 0
+export(int, FLAGS, "east", "south", "west", "north") var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 
@@ -12,9 +12,9 @@ enum IOType { INPUT, OUTPUT }
 # TODO: move to universal storage
 enum Direction {
 	EAST = 1 << 0,
-	NORTH = 1 << 1,
+	SOUTH = 1 << 1,
 	WEST = 1 << 2,
-	SOUTH = 1 << 3,
+	NORTH = 1 << 3,
 }
 
 func _draw():
