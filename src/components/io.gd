@@ -10,22 +10,21 @@ onready var Arrow := preload("res://src/gui/arrow.tscn")
 enum IOType { INPUT, OUTPUT }
 
 # TODO: move to universal storage
-enum {
-	NONE = 0,
+enum Direction {
 	EAST = 1 << 0,
 	NORTH = 1 << 1,
 	WEST = 1 << 2,
 	SOUTH = 1 << 3,
 }
 
-const directions = [ EAST, NORTH, WEST, SOUTH ]
-
 func _draw():
-	for d in len(directions):
-		if outputs & directions[d]:
+	var d := 0
+	for dir in Direction:
+		if outputs & Direction[dir]:
 			drawArrow(d * PI/2, IOType.OUTPUT)
-		if inputs & directions[d]:
+		if inputs & Direction[dir]:
 			drawArrow(d * PI/2, IOType.INPUT)
+		d += 1
 
 func drawArrow(angle: float, ioType: int):
 	var color := Color.tomato if ioType == IOType.INPUT else Color.lawngreen
