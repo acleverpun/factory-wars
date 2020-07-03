@@ -1,9 +1,6 @@
 tool
 extends Polygon2D
 
-export(int, FLAGS, "east", "south", "west", "north") var inputs = 0
-export(int, FLAGS, "east", "south", "west", "north") var outputs = 0
-
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 
 # TODO: move to universal storage
@@ -15,6 +12,16 @@ enum Direction {
 	SOUTH = 1 << 1,
 	WEST = 1 << 2,
 	NORTH = 1 << 3,
+}
+
+export(Direction, FLAGS) var inputs = 0
+export(Direction, FLAGS) var outputs = 0
+
+onready var sides = {
+	Direction.EAST: null,
+	Direction.SOUTH: null,
+	Direction.WEST: null,
+	Direction.NORTH: null,
 }
 
 func _draw():
