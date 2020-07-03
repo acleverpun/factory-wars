@@ -6,14 +6,17 @@ export(int, FLAGS, "east", "north", "west", "south") var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 
+# TODO: move to universal storage
 enum IOType { INPUT, OUTPUT }
 
 # TODO: move to universal storage
-const NONE = 0
-const EAST = 1 << 0
-const NORTH = 1 << 1
-const WEST = 1 << 2
-const SOUTH = 1 << 3
+enum {
+	NONE = 0,
+	EAST = 1 << 0,
+	NORTH = 1 << 1,
+	WEST = 1 << 2,
+	SOUTH = 1 << 3,
+}
 
 const directions = [ EAST, NORTH, WEST, SOUTH ]
 
