@@ -7,7 +7,7 @@ func _ready():
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("game.debug"):
-		print(value)
+		prints(value)
 	elif Input.is_action_just_pressed("ui_accept"):
 		next()
 
