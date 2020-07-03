@@ -12,4 +12,4 @@ script = ExtResource( 1 )
 [node name="selectable" parent="." instance=ExtResource( 3 )]
 
 [node name="io" parent="." instance=ExtResource( 2 )]
-outputs = 2
+outputs = 1

@@ -13,5 +13,4 @@ script = ExtResource( 2 )
 
 [node name="io" parent="." instance=ExtResource( 1 )]
 polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
-inputs = 8
-outputs = 2
+inputs = 4
