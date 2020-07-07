@@ -2,6 +2,7 @@ tool
 extends Polygon2D
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
+onready var parent := get_parent()
 
 # TODO: move to universal storage
 enum IOType { Input, Output }
@@ -23,6 +24,16 @@ onready var sides = {
 	Direction.West: null,
 	Direction.North: null,
 }
+
+func _ready():
+	# TODO: find this in a better, non-hardcoded way
+	var tilemap := parent.get_node("..") as TileMap
+
+	# set cell data
+	var position := tilemap.world_to_map(parent.position)
+	tilemap.set_cellv(position, parent.get_instance_id())
+
+	# TODO: make connections
 
 func _draw():
 	var d := 0
