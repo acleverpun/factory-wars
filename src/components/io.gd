@@ -6,7 +6,7 @@ export(types.DirectionFlags, FLAGS) var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 onready var parent := get_parent()
-onready var instanceId := parent.get_instance_id()
+onready var instanceId := get_instance_id()
 # TODO: find this in a better, non-hardcoded way
 onready var tilemap := parent.get_node("..") as TileMap
 
@@ -16,7 +16,7 @@ func _ready():
 	if Engine.editor_hint: return
 
 	# set cell data
-	var gridPosition := tilemap.world_to_map(parent.position)
+	var gridPosition := tilemap.world_to_map(parent.position + self.position)
 	tilemap.set_cellv(gridPosition, instanceId)
 
 	# make connections
@@ -25,10 +25,7 @@ func _ready():
 			var otherId = tilemap.get_cellv(gridPosition + types.Direction[dir])
 			if otherId == -1: return
 
-			var otherNode := instance_from_id(otherId) as Node
-			if !otherNode: return
-
-			var otherIO := otherNode.get_node("io") as IO
+			var otherIO := instance_from_id(otherId) as IO
 			if !otherIO: return
 
 			self.addConnection(otherIO, types.Direction[dir])
