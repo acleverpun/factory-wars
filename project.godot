@@ -33,12 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Factory Wars"
-run/main_scene="res://src/states/main.tscn"
+run/main_scene="res://src/maps/lab.tscn"
 config/icon="res://assets/icons/icon.png"
 
 [autoload]
 
 events="*res://src/systems/events.gd"
+mappings="*res://src/systems/mappings.gd"
 
 [input]
 
