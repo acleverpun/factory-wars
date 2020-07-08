@@ -1,10 +1,10 @@
 class_name types extends Reference
 
 const Direction = {
-	East = Vector2.RIGHT,
-	South = Vector2.DOWN,
-	West = Vector2.LEFT,
-	North = Vector2.UP,
+	"East": Vector2.RIGHT,
+	"South": Vector2.DOWN,
+	"West": Vector2.LEFT,
+	"North": Vector2.UP,
 }
 
 enum DirectionFlags {
