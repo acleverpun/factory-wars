@@ -5,7 +5,7 @@
 
 [node name="unit" type="Polygon2D"]
 color = Color( 0.396078, 0.682353, 0.984314, 1 )
-polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
+polygon = PoolVector2Array( -12, -12, 12, -12, 12, 12, -12, 12 )
 script = ExtResource( 2 )
 
 [node name="selectable" parent="." instance=ExtResource( 3 )]
