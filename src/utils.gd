@@ -1,3 +1,5 @@
+class_name utils extends Reference
+
 static func isClick(event: InputEvent, button: int = 1):
 	return (
 		event is InputEventMouseButton and
@@ -24,3 +26,9 @@ static func hasPoint(polygon: Polygon2D, point: Vector2):
 		vert2 = vert
 
 	return isInside
+
+static func getAncestor(node: Node, name: String):
+	var parent = node.get_parent()
+	while parent != null:
+		if node.name == name: return parent
+		parent = parent.get_parent()
