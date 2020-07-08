@@ -14,6 +14,7 @@ onready var sides = {}
 
 func _ready():
 	if Engine.editor_hint: return
+	if not tilemap: return
 
 	# set cell data
 	var gridPosition := tilemap.world_to_map(parent.position + self.position)
