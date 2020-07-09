@@ -8,13 +8,16 @@ const Down = size * Vector2.DOWN
 const Left = size * Vector2.LEFT
 const Up = size * Vector2.UP
 
-# TODO: make layer enum or const dict or something
+var layers = {}
 
 func _ready():
-	pass
+	for child in get_children():
+		layers[child.name] = child
 
-func addNode(Class: Resource, layerName: String, position: Vector2):
-	var layer := get_node(layerName) as TileMap
+func addNode(Class: Resource, layerName, position: Vector2):
+	var layer: TileMap
+	if typeof(layerName) == TYPE_STRING: layer = layers[layerName] as TileMap
+	else: layer = layerName as TileMap
 	assert(layer != null)
 
 	var node = Class.instance()
