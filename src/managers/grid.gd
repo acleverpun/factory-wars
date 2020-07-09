@@ -14,11 +14,9 @@ func _ready():
 	for child in get_children():
 		layers[child.name] = child
 
-func addNode(Class: Resource, layerName, position: Vector2):
-	var layer: TileMap
-	if typeof(layerName) == TYPE_STRING: layer = layers[layerName] as TileMap
-	else: layer = layerName as TileMap
-	assert(layer != null)
+func addNode(Class: Resource, layerName: String, position: Vector2):
+	assert(layers.has(layerName))
+	var layer: TileMap = layers[layerName] as TileMap
 
 	var node = Class.instance()
 	node.position = position
