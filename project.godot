@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Grid",
+"language": "GDScript",
+"path": "res://src/managers/grid.gd"
+}, {
 "base": "Polygon2D",
 "class": "IO",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://lib/utils.gd"
 } ]
 _global_script_class_icons={
+"Grid": "",
 "IO": "",
 "types": "",
 "utils": ""

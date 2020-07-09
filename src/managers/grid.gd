@@ -1,4 +1,14 @@
-extends Node2D
+class_name Grid extends Node2D
+
+const size = 32
+const cell = Vector2(size, size)
+
+const Right = size * Vector2.RIGHT
+const Down = size * Vector2.DOWN
+const Left = size * Vector2.LEFT
+const Up = size * Vector2.UP
+
+# TODO: make layer enum or const dict or something
 
 func _ready():
 	pass
