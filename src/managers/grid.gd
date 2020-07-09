@@ -21,3 +21,15 @@ func addNode(Class: Resource, layerName: String, position: Vector2):
 	var node = Class.instance()
 	node.position = position
 	layer.add_child(node)
+
+func getData(layerName: String, position: Vector2) -> int:
+	assert(layers.has(layerName))
+	var layer: TileMap = layers[layerName] as TileMap
+	var gridPosition := layer.world_to_map(position)
+	return layer.get_cellv(gridPosition)
+
+func setData(layerName: String, position: Vector2, value: int) -> void:
+	assert(layers.has(layerName))
+	var layer: TileMap = layers[layerName] as TileMap
+	var gridPosition := layer.world_to_map(position)
+	layer.set_cellv(gridPosition, value)

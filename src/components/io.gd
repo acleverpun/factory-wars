@@ -8,22 +8,23 @@ onready var Arrow := preload("res://src/gui/arrow.tscn")
 onready var parent := get_parent()
 onready var instanceId := get_instance_id()
 # TODO: find this in a better, non-hardcoded way
-onready var tilemap := parent.get_node("..") as TileMap
+onready var grid := parent.get_node("../..") as Grid
 
 onready var sides = {}
 
 func _ready():
 	if Engine.editor_hint: return
-	if not tilemap: return
+	call_deferred("init")
 
+func init():
 	# set cell data
-	var gridPosition := tilemap.world_to_map(parent.position + self.position)
-	tilemap.set_cellv(gridPosition, instanceId)
+	var position := (parent.position + self.position) as Vector2
+	grid.setData("structures", position, instanceId)
 
 	# make connections
 	for dir in types.Direction:
 		if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-			var otherId = tilemap.get_cellv(gridPosition + types.Direction[dir])
+			var otherId := grid.getData("structures", position + Grid[dir])
 			if otherId == -1: continue
 
 			var otherIO := instance_from_id(otherId) as IO
