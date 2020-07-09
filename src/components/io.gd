@@ -6,9 +6,9 @@ export(types.DirectionFlags, FLAGS) var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 onready var parent := get_parent()
-onready var instanceId := get_instance_id()
 onready var layer := parent.get_parent() as TileMap
 onready var grid := layer.get_parent() as Grid
+onready var instanceId := get_instance_id()
 
 onready var sides = {}
 
