@@ -5,16 +5,16 @@
 [ext_resource path="res://src/entities/structures/factory.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/entities/structures/generator.tscn" type="PackedScene" id=4]
 
-[node name="lab" type="Node2D"]
+[node name="map" type="Node2D"]
 
 [node name="round" parent="." instance=ExtResource( 1 )]
 
 [node name="grid" parent="." instance=ExtResource( 2 )]
 
 [node name="factory" parent="grid/structures" index="0" instance=ExtResource( 3 )]
-position = Vector2( 304, 144 )
+position = Vector2( 272, 144 )
 
 [node name="generator" parent="grid/structures" index="1" instance=ExtResource( 4 )]
-position = Vector2( 272, 144 )
+position = Vector2( 240, 144 )
 
 [editable path="grid"]

@@ -32,3 +32,6 @@ static func getAncestor(node: Node, name: String):
 	while parent != null:
 		if node.name == name: return parent
 		parent = parent.get_parent()
+
+static func printNode(node: Node):
+	prints(node.name, node, node.get_children())

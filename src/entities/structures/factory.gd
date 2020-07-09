@@ -5,6 +5,7 @@ const Unit = preload("res://src/entities/units/unit.tscn")
 export var value := 0
 
 onready var tilemap := get_parent() as TileMap
+onready var grid := tilemap.get_parent()
 
 func onSelect():
 	spawn()
@@ -16,6 +17,4 @@ func spawn():
 		return
 
 	value -= 20
-	var unit = Unit.instance()
-	unit.position = self.position + Vector2(0, 32)
-	tilemap.add_child(unit)
+	grid.addNode(Unit, "units", self.position + Vector2(0, 32))
