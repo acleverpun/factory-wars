@@ -11,6 +11,8 @@ func onSelect():
 	spawn()
 
 func spawn():
+	if grid.getData("units", self.position) != -1: return
+
 	if value < 20:
 		prints("value not high enough", value)
 		value += 10
