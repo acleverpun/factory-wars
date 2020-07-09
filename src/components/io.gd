@@ -7,8 +7,8 @@ export(types.DirectionFlags, FLAGS) var outputs = 0
 onready var Arrow := preload("res://src/gui/arrow.tscn")
 onready var parent := get_parent()
 onready var instanceId := get_instance_id()
-# TODO: find this in a better, non-hardcoded way
-onready var grid := parent.get_node("../..") as Grid
+onready var layer := parent.get_parent() as TileMap
+onready var grid := layer.get_parent() as Grid
 
 onready var sides = {}
 
@@ -19,12 +19,12 @@ func _ready():
 func init():
 	# set cell data
 	var position := (parent.position + self.position) as Vector2
-	grid.setData("structures", position, instanceId)
+	grid.setData(layer.name, position, instanceId)
 
 	# make connections
 	for dir in types.Direction:
 		if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-			var otherId := grid.getData("structures", position + Grid[dir])
+			var otherId := grid.getData(layer.name, position + Grid[dir])
 			if otherId == -1: continue
 
 			var otherIO := instance_from_id(otherId) as IO
