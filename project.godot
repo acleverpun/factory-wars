@@ -17,12 +17,12 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "types",
 "language": "GDScript",
-"path": "res://src/types.gd"
+"path": "res://lib/types.gd"
 }, {
 "base": "Reference",
 "class": "utils",
 "language": "GDScript",
-"path": "res://src/utils.gd"
+"path": "res://lib/utils.gd"
 } ]
 _global_script_class_icons={
 "IO": "",

@@ -24,10 +24,10 @@ func _ready():
 	for dir in types.Direction:
 		if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
 			var otherId = tilemap.get_cellv(gridPosition + types.Direction[dir])
-			if otherId == -1: return
+			if otherId == -1: continue
 
 			var otherIO := instance_from_id(otherId) as IO
-			if !otherIO: return
+			if !otherIO: continue
 
 			self.addConnection(otherIO, types.Direction[dir])
 			otherIO.addConnection(self, -1 * types.Direction[dir])
