@@ -12,3 +12,6 @@ func init():
 
 func onSelect():
 	prints("Unit selected:", self.name)
+
+func onDeselect():
+	prints("Unit deselected:", self.name)
