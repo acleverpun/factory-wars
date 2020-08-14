@@ -7,7 +7,7 @@ export var value := 0
 onready var tilemap := get_parent() as TileMap
 onready var grid := tilemap.get_parent() as Grid
 
-func onSelect():
+func _onSelected():
 	spawn()
 
 func spawn():

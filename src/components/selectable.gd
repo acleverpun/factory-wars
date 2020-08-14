@@ -7,12 +7,12 @@ onready var parent := get_parent()
 onready var selected := false
 
 func _ready():
-	connect("input_event", self, "onInputEvent")
+	connect("input_event", self, "_onInputEvent")
 
-	if parent.has_method("onSelect"): connect("selected", parent, "onSelect")
-	if parent.has_method("onDeselect"): connect("deselected", parent, "onDeselect")
+	if parent.has_method("_onSelected"): connect("selected", parent, "_onSelected")
+	if parent.has_method("_onDeselected"): connect("deselected", parent, "_onDeselected")
 
-func onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int):
+func _onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int):
 	if not event is InputEventMouseButton: return
 	if not event.pressed: return
 

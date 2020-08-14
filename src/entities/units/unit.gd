@@ -10,8 +10,8 @@ func _ready():
 func init():
 	grid.setData(layer.name, self.position, instanceId)
 
-func onSelect():
+func _onSelected():
 	prints("Unit selected:", self.name)
 
-func onDeselect():
+func _onDeselected():
 	prints("Unit deselected:", self.name)

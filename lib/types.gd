@@ -1,12 +1,5 @@
 class_name types extends Reference
 
-const Direction = {
-	"Right": Vector2.RIGHT,
-	"Down": Vector2.DOWN,
-	"Left": Vector2.LEFT,
-	"Up": Vector2.UP,
-}
-
 enum DirectionFlags {
 	Right = 1 << 0,
 	Down = 1 << 1,
@@ -15,3 +8,10 @@ enum DirectionFlags {
 }
 
 enum IO { Input, Output }
+
+const Direction = {
+	"Right": Vector2.RIGHT,
+	"Down": Vector2.DOWN,
+	"Left": Vector2.LEFT,
+	"Up": Vector2.UP,
+}

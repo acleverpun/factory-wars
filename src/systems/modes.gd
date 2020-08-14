@@ -4,11 +4,11 @@ enum Mode {
 	Select,
 }
 
+var mode
+
 onready var modes = {
 	Mode.Select: $select,
 }
-
-var mode
 
 func _ready():
 	prints("System ready:", self.name)

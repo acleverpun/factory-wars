@@ -3,7 +3,7 @@ extends Node
 var value
 
 func _ready():
-	connect("input_event", self, "onInputEvent")
+	connect("input_event", self, "_onInputEvent")
 
 func _input(event: InputEvent):
 	if Input.is_action_just_pressed("game.action"):

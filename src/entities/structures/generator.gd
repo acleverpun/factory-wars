@@ -4,11 +4,11 @@ export var value := 0
 export var gain := 10
 
 func _ready():
-	events.on("round:changed", self, "onRound")
+	events.on("round:changed", self, "_onRoundChanged")
 
-func onRound(currentRound: int):
+func _onRoundChanged(currentRound: int):
 	value += gain
 	prints("round changed", currentRound, value)
 
-func onSelect():
+func _onSelected():
 	prints(value)
