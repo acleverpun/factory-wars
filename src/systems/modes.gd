@@ -4,8 +4,8 @@ enum Mode {
 	Select,
 }
 
-const modes = {
-	Mode.Select: preload("modes/select.gd"),
+onready var modes = {
+	Mode.Select: $select,
 }
 
 var mode
@@ -17,7 +17,6 @@ func _ready():
 func switch(mode, value = null):
 	if self.mode:
 		remove_child(self.mode)
-	self.mode = modes[mode].new()
-	self.mode.name = Mode.keys()[mode]
+	self.mode = modes[mode]
 	self.mode.value = value
 	add_child(self.mode)
