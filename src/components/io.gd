@@ -18,7 +18,7 @@ func _ready():
 
 func init():
 	# set cell data
-	var position := (parent.position + self.position) as Vector2
+	var position: Vector2 = (parent.position + self.position)
 	grid.setData(layer.name, position, instanceId)
 
 	# make connections
@@ -27,7 +27,7 @@ func init():
 			var otherId := grid.getData(layer.name, position + Grid[dir])
 			if otherId == -1: continue
 
-			var otherIO := instance_from_id(otherId) as IO
+			var otherIO: IO = instance_from_id(otherId)
 			if !otherIO: continue
 
 			self.addConnection(otherIO, types.Direction[dir])

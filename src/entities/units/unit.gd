@@ -1,7 +1,7 @@
 extends Polygon2D
 
-onready var layer := get_parent() as TileMap
-onready var grid := layer.get_parent() as Grid
+onready var layer: TileMap = get_parent()
+onready var grid: Grid = layer.get_parent()
 onready var instanceId := get_instance_id()
 
 func _ready():

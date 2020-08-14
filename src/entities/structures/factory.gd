@@ -4,8 +4,8 @@ const Unit = preload("res://src/entities/units/unit.tscn")
 
 export var value := 0
 
-onready var tilemap := get_parent() as TileMap
-onready var grid := tilemap.get_parent() as Grid
+onready var tilemap: TileMap = get_parent()
+onready var grid: Grid = tilemap.get_parent()
 
 func _onSelected():
 	spawn()
