@@ -7,10 +7,10 @@ export var value := 0
 onready var tilemap: TileMap = get_parent()
 onready var grid: Grid = tilemap.get_parent()
 
-func _onSelected():
+func _onSelected() -> void:
 	spawn()
 
-func spawn():
+func spawn() -> void:
 	if grid.getData("units", self.position) != -1: return
 
 	if value < 20:

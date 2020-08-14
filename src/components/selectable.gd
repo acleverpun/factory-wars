@@ -6,13 +6,13 @@ signal deselected
 onready var parent := get_parent()
 onready var selected := false
 
-func _ready():
+func _ready() -> void:
 	connect("input_event", self, "_onInputEvent")
 
 	if parent.has_method("_onSelected"): connect("selected", parent, "_onSelected")
 	if parent.has_method("_onDeselected"): connect("deselected", parent, "_onDeselected")
 
-func _onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int):
+func _onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int) -> void:
 	if not event is InputEventMouseButton: return
 	if not event.pressed: return
 

@@ -10,11 +10,11 @@ onready var modes = {
 	Mode.Select: $select,
 }
 
-func _ready():
+func _ready() -> void:
 	prints("System ready:", self.name)
 	switch(Mode.Select)
 
-func switch(mode, value = null):
+func switch(mode, value = null) -> void:
 	if self.mode:
 		remove_child(self.mode)
 	self.mode = modes[mode]

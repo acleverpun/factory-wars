@@ -2,10 +2,10 @@ extends Node
 
 var value
 
-func _ready():
+func _ready() -> void:
 	connect("input_event", self, "_onInputEvent")
 
-func _input(event: InputEvent):
+func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.action"):
 		prints("action")
 

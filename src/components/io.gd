@@ -12,11 +12,11 @@ onready var instanceId := get_instance_id()
 
 onready var sides = {}
 
-func _ready():
+func _ready() -> void:
 	if Engine.editor_hint: return
 	call_deferred("init")
 
-func init():
+func init() -> void:
 	# set cell data
 	var position: Vector2 = (parent.position + self.position)
 	grid.setData(layer.name, position, instanceId)
@@ -33,7 +33,7 @@ func init():
 			self.addConnection(otherIO, types.Direction[dir])
 			otherIO.addConnection(self, -1 * types.Direction[dir])
 
-func _draw():
+func _draw() -> void:
 	var d := 0
 	for dir in types.DirectionFlags:
 		if outputs & types.DirectionFlags[dir]:
@@ -42,7 +42,7 @@ func _draw():
 			drawArrow(d * PI/2, types.IO.Input)
 		d += 1
 
-func drawArrow(angle: float, ioType: int):
+func drawArrow(angle: float, ioType: int) -> void:
 	var color := Color.tomato if ioType == types.IO.Input else Color.lawngreen
 	var arrow := Arrow.instance()
 	color.a = 0.8
@@ -54,5 +54,5 @@ func drawArrow(angle: float, ioType: int):
 
 	add_child(arrow)
 
-func addConnection(otherIO: IO, dir: Vector2):
+func addConnection(otherIO: IO, dir: Vector2) -> void:
 	sides[dir] = otherIO
