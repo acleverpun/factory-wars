@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	prints("System ready:", "events")
+	prints("System ready:", self.name)
 
 func ensure(event: String):
 	if not has_user_signal(event):
