@@ -1,7 +1,7 @@
 extends Area2D
 
-signal select
-signal deselect
+signal selected
+signal deselected
 
 onready var parent := get_parent()
 onready var selected := false
@@ -9,8 +9,8 @@ onready var selected := false
 func _ready():
 	connect("input_event", self, "onInputEvent")
 
-	if parent.has_method("onSelect"): connect("select", parent, "onSelect")
-	if parent.has_method("onDeselect"): connect("deselect", parent, "onDeselect")
+	if parent.has_method("onSelect"): connect("selected", parent, "onSelect")
+	if parent.has_method("onDeselect"): connect("deselected", parent, "onDeselect")
 
 func onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int):
 	if not event is InputEventMouseButton: return
@@ -18,11 +18,11 @@ func onInputEvent(viewport: Viewport, event: InputEvent, shapeIndex: int):
 
 	if event.button_index == BUTTON_LEFT:
 		if selected:
-			emit_signal("deselect")
+			emit_signal("deselected")
 		else:
-			emit_signal("select")
+			emit_signal("selected")
 		selected = not selected
 
 	if event.button_index == BUTTON_RIGHT and selected:
-		emit_signal("deselect")
+		emit_signal("deselected")
 		selected = false

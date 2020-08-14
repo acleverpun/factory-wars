@@ -13,4 +13,4 @@ func _input(event: InputEvent):
 
 func next():
 	value += 1
-	events.emit_signal("round:next", value)
+	events.emit_signal("round:changed", value)

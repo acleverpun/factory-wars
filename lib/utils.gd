@@ -19,7 +19,7 @@ static func hasPoint(polygon: Polygon2D, point: Vector2):
 	var vert2 := verts[-1]
 	for vert in verts:
 		var intersects = (
-			(vert.y > point.y) != (vert2.y > point.y) &&
+			(vert.y > point.y) != (vert2.y > point.y) and
 			point.x < (vert2.x - vert.x) * (point.y - vert.y) / (vert2.y - vert.y) + vert.x
 		)
 		if intersects: isInside = !isInside
