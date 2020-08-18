@@ -8,6 +8,7 @@ static func getAncestor(node: Node, name: String) -> Node:
 	while parent != null:
 		if node.name == name: return parent
 		parent = parent.get_parent()
+	return null
 
 static func isClick(event: InputEvent, button: int = 1) -> bool:
 	return (
@@ -35,3 +36,6 @@ static func hasPoint(polygon: Polygon2D, point: Vector2) -> bool:
 		vert2 = vert
 
 	return isInside
+
+static func lowerFirst(value: String) -> String:
+	return value[0].to_lower() + value.substr(1)
