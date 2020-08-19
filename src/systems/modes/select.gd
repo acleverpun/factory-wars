@@ -2,6 +2,8 @@ extends Node
 
 var value
 
+var fsm: Fsm
+
 func _ready() -> void:
 	connect("input_event", self, "_onInputEvent")
 

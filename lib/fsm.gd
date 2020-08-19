@@ -3,33 +3,37 @@ class_name Fsm extends Node
 export(Array, Script) var scripts
 
 export var states = {}
-var state: Object
+var state: Node
 
 var history = []
 
 func _ready() -> void:
 	for State in scripts:
-		var name: String = State.resource_path.get_file().trim_suffix("." + State.resource_path.get_extension()).capitalize()
+		var name: String = utils.getBasename(State.resource_path)
 		State.set_meta("name", name)
 		states[name] = State
 
-	prints(states)
-
 	# Set initial state to first entry
-	switch(states.Select)
+	change(states[states.keys()[0]])
 
-func switch(State: Script, value = null) -> void:
-	var state: Node = State.new()
-	state.name = utils.lowerFirst(State.get_meta("name"))
+func enter(newState: Node, value = null) -> void:
+	prints("Switching to state:", newState.name)
+	state = newState
+	state.fsm = self
 	add_child(state)
-	# history.append(state.name)
+
+	if state.has_method("enter"):
+		state.enter()
+
+func change(State: Script, value = null) -> void:
+	if state:
+		history.append(state)
+		remove_child(state)
+
+	var newState: Node = State.new()
+	newState.name = utils.lowerFirst(State.get_meta("name"))
+	enter(newState, value)
 
 func back() -> void:
-	pass
-
-func _enter(newState) -> void:
-	# prints("Entering state:", newState.name)
-	# state = newState
-	# state.fsm = self
-	# state.enter()
-	pass
+	if history.size() == 0: return
+	enter(history.pop_back())

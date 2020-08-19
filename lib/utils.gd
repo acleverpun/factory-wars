@@ -39,3 +39,6 @@ static func hasPoint(polygon: Polygon2D, point: Vector2) -> bool:
 
 static func lowerFirst(value: String) -> String:
 	return value[0].to_lower() + value.substr(1)
+
+static func getBasename(resourcePath: String) -> String:
+	return resourcePath.get_file().trim_suffix("." + resourcePath.get_extension()).capitalize()
