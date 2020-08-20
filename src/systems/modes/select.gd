@@ -2,7 +2,7 @@ extends Node
 
 var value
 
-var fsm: Fsm
+onready var fsm: Fsm = get_parent()
 
 func _ready() -> void:
 	connect("input_event", self, "_onInputEvent")

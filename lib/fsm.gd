@@ -19,7 +19,6 @@ func _ready() -> void:
 func enter(newState: Node, value = null) -> void:
 	prints("Switching to state:", newState.name)
 	state = newState
-	state.fsm = self
 	add_child(state)
 
 	if state.has_method("enter"):
