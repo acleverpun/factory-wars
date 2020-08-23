@@ -8,7 +8,7 @@ func _ready() -> void:
 	call_deferred("init")
 
 func init() -> void:
-	grid.setData(layer.name, self.position, instanceId)
+	grid.setData(self.position, layer.name, instanceId)
 
 func _onSelected() -> void:
 	prints("Unit selected:", self.name)

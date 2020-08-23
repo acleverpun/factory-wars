@@ -11,7 +11,7 @@ func _onSelected() -> void:
 	spawn()
 
 func spawn() -> void:
-	if grid.getData("units", self.position) != -1: return
+	if grid.getData(self.position, "units"): return
 
 	if value < 20:
 		prints("value not high enough", value)

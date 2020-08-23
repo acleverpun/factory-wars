@@ -18,14 +18,14 @@ func _ready() -> void:
 
 func init() -> void:
 	# set cell data
-	var position: Vector2 = (parent.position + self.position)
-	grid.setData(layer.name, position, instanceId)
+	var position: Vector2 = parent.position + self.position
+	grid.setData(position, layer.name, instanceId)
 
 	# make connections
 	for dir in types.Direction:
 		if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-			var otherId := grid.getData(layer.name, position + Grid[dir])
-			if otherId == -1: continue
+			var otherId = grid.getData(position + Grid[dir], layer.name)
+			if !otherId: continue
 
 			var otherIO: IO = instance_from_id(otherId)
 			if !otherIO: continue
