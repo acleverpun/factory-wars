@@ -11,7 +11,8 @@ var store := {}
 var layers := {}
 
 func _ready() -> void:
-	prints(self.cell_size)
+	self.cell_size = Vector2(size, size)
+
 	for child in get_children():
 		layers[child.name] = child
 
