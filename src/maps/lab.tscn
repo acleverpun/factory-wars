@@ -13,6 +13,7 @@
 [node name="round" parent="." instance=ExtResource( 1 )]
 
 [node name="grid" parent="." instance=ExtResource( 2 )]
+format = 1
 
 [node name="factory" parent="grid/structures" index="0" instance=ExtResource( 3 )]
 position = Vector2( 272, 144 )

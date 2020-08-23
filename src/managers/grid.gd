@@ -1,4 +1,4 @@
-class_name Grid extends Node2D
+class_name Grid extends TileMap
 
 const size = 32
 const cell = Vector2(size, size)
