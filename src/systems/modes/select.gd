@@ -11,7 +11,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.action"):
 		var data := grid.getAllData(event.position)
-		prints(data)
+		prints("action:", data)
 
 	if Input.is_action_just_pressed("game.context"):
 		prints("context")
