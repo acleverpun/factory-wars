@@ -10,9 +10,10 @@ const Up = size * Vector2.UP
 var store := {}
 var layers := {}
 
-func _ready() -> void:
+func _init() -> void:
 	self.cell_size = Vector2(size, size)
 
+func _ready() -> void:
 	for child in get_children():
 		layers[child.name] = child
 
