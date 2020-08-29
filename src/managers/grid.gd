@@ -32,8 +32,10 @@ func getAllData(position: Vector2) -> Dictionary:
 	if store.get(key) == null: store[key] = {}
 	return store.get(key)
 
-func getData(position: Vector2, type: String):
-	return getAllData(position).get(type)
+func getData(position: Vector2, type: String, default = null):
+	var result = getAllData(position).get(type)
+	if result == null: return default
+	return result
 
 func setData(position: Vector2, type: String, value) -> void:
 	getAllData(position)[type] = value
