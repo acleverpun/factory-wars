@@ -1,3 +1,6 @@
 # godot
-
 /.import
+
+# mono
+.mono/
+data_*/
