@@ -53,6 +53,13 @@ config/icon="res://assets/icons/icon.png"
 events="*res://src/systems/events.gd"
 mappings="*res://src/systems/mappings.gd"
 
+[debug]
+
+gdscript/warnings/unused_argument=false
+gdscript/warnings/incompatible_ternary=false
+gdscript/warnings/unused_signal=false
+gdscript/warnings/return_value_discarded=false
+
 [input]
 
 game.close={

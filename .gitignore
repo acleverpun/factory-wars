@@ -4,3 +4,11 @@
 # mono
 .mono/
 data_*/
+
+# nim
+.nimcache
+/_dlls
+/nakefile
+/nakefile.json
+/src/godotapi
+nimcache
