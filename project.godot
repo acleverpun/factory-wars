@@ -66,6 +66,11 @@ gdscript/warnings/incompatible_ternary=false
 gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [input]
 
 game.close={

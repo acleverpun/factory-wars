@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/main.gd" type="Script" id=1]
+
+[node name="main" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rows" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1160.0
+margin_bottom = 640.0
+
+[node name="titleContainer" type="MarginContainer" parent="rows"]
+margin_right = 1040.0
+margin_bottom = 278.0
+size_flags_vertical = 3
+
+[node name="title" type="RichTextLabel" parent="rows/titleContainer"]
+margin_right = 1040.0
+margin_bottom = 278.0
+text = "Factory Wars"
+
+[node name="buttons" type="VBoxContainer" parent="rows"]
+margin_top = 282.0
+margin_right = 1040.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="sandbox" type="Button" parent="rows/buttons"]
+margin_right = 1040.0
+margin_bottom = 20.0
+text = "sandbox"
+
+[node name="quit" type="Button" parent="rows/buttons"]
+margin_top = 24.0
+margin_right = 1040.0
+margin_bottom = 44.0
+text = "quit"
