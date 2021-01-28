@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/systems/modes/select.gd" type="Script" id=1]
 [ext_resource path="res://lib/fsm.gd" type="Script" id=2]
+[ext_resource path="res://src/systems/modes/move.gd" type="Script" id=3]
 
 [node name="modes" type="Node"]
 script = ExtResource( 2 )
-scripts = [ ExtResource( 1 ) ]
+States = [ ExtResource( 1 ), ExtResource( 3 ) ]
+default = "Select"

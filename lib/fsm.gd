@@ -1,38 +1,40 @@
 class_name Fsm extends Node
 
-export(Array, Script) var scripts
+export(Array, Script) var States
 
 export var states = {}
+export var default: String
+
 var state: Node
 
-var history = []
-
 func _ready() -> void:
-	for State in scripts:
-		var name: String = utils.getBasename(State.resource_path)
+	for State in States:
+		var name := utils.getBasename(State.resource_path)
+		prints("Initializing state: %s" % name)
 		State.set_meta("name", name)
 		states[name] = State
 
-	# Set initial state to first entry
-	change(states[states.keys()[0]])
+	# Set initial state to default
+	# change(default)
+	change(states[default])
 
-func enter(newState: Node, value = null) -> void:
-	prints("Switching to state:", newState.name)
-	state = newState
-	add_child(state)
+func change(State: Script) -> void:
+	var name: String = State.get_meta("name")
 
-	if state.has_method("enter"):
-		state.enter()
+	# Safeguard against state injections
+	if not states.has(name) or states.get(name) != State:
+		printerr("State not found: %s" % State)
 
-func change(State: Script, value = null) -> void:
+	# Replace old state
+	# TODO: add history stack
 	if state:
-		history.append(state)
 		remove_child(state)
 
 	var newState: Node = State.new()
-	newState.name = utils.lowerFirst(State.get_meta("name"))
-	enter(newState, value)
+	newState.name = utils.lowerFirst(name)
 
-func back() -> void:
-	if history.size() == 0: return
-	enter(history.pop_back())
+	var oldState: String = state.name if state != null else "NONE"
+	prints("Switching states: %s => %s" % [ oldState, newState.name ])
+
+	state = newState
+	add_child(state)
