@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Factory Wars"
-run/main_scene="res://src/maps/lab.tscn"
+run/main_scene="res://src/maps/sandbox.tscn"
 config/icon="res://assets/icons/icon.png"
 
 [autoload]
