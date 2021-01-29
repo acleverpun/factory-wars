@@ -1,0 +1,39 @@
+[gd_scene format=2]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="sections" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectionBar" type="HBoxContainer" parent="sections"]
+margin_right = 1280.0
+margin_bottom = 15.0
+
+[node name="labelContainer" type="MarginContainer" parent="sections/selectionBar"]
+margin_right = 638.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="selectionLabel" type="RichTextLabel" parent="sections/selectionBar/labelContainer"]
+margin_right = 638.0
+margin_bottom = 15.0
+text = "selected:"
+fit_content_height = true
+
+[node name="selectionContainer" type="MarginContainer" parent="sections/selectionBar"]
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="selection" type="RichTextLabel" parent="sections/selectionBar/selectionContainer"]
+margin_right = 638.0
+margin_bottom = 15.0
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
