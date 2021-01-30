@@ -12,28 +12,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="selectionBar" type="HBoxContainer" parent="sections"]
+[node name="modeBar" type="HBoxContainer" parent="sections"]
 margin_right = 1280.0
 margin_bottom = 15.0
+
+[node name="labelContainer" type="MarginContainer" parent="sections/modeBar"]
+margin_right = 638.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="label" type="RichTextLabel" parent="sections/modeBar/labelContainer"]
+margin_right = 638.0
+margin_bottom = 15.0
+text = "mode:"
+fit_content_height = true
+
+[node name="valueContainer" type="MarginContainer" parent="sections/modeBar"]
+margin_left = 642.0
+margin_right = 1280.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+
+[node name="value" type="RichTextLabel" parent="sections/modeBar/valueContainer"]
+margin_right = 638.0
+margin_bottom = 15.0
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectionBar" type="HBoxContainer" parent="sections"]
+margin_top = 19.0
+margin_right = 1280.0
+margin_bottom = 34.0
 
 [node name="labelContainer" type="MarginContainer" parent="sections/selectionBar"]
 margin_right = 638.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 
-[node name="selectionLabel" type="RichTextLabel" parent="sections/selectionBar/labelContainer"]
+[node name="label" type="RichTextLabel" parent="sections/selectionBar/labelContainer"]
 margin_right = 638.0
 margin_bottom = 15.0
 text = "selected:"
 fit_content_height = true
 
-[node name="selectionContainer" type="MarginContainer" parent="sections/selectionBar"]
+[node name="valueContainer" type="MarginContainer" parent="sections/selectionBar"]
 margin_left = 642.0
 margin_right = 1280.0
 margin_bottom = 15.0
 size_flags_horizontal = 3
 
-[node name="selection" type="RichTextLabel" parent="sections/selectionBar/selectionContainer"]
+[node name="value" type="RichTextLabel" parent="sections/selectionBar/valueContainer"]
 margin_right = 638.0
 margin_bottom = 15.0
 fit_content_height = true
