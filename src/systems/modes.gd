@@ -2,7 +2,14 @@ class_name Modes extends Fsm
 
 signal mode_changed
 
-func change(State: Script) -> void:
-	.change(State)
+enum {
+	Select,
+	Move,
+}
 
-	events.emit("mode_changed", state)
+func change(State) -> Node:
+	var mode = .change(State)
+
+	events.emit("mode_changed", mode)
+
+	return mode

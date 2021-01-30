@@ -15,7 +15,8 @@ func init() -> void:
 
 func _onSelected() -> void:
 	prints("Unit selected:", self.name)
-	modes.change(modes.states.Move)
+	modes.change(modes.Move)
 
 func _onDeselected() -> void:
 	prints("Unit deselected:", self.name)
+	modes.change(modes.Select)
