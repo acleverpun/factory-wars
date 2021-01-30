@@ -8,7 +8,7 @@ onready var tilemap: TileMap = get_parent()
 onready var grid: Grid = tilemap.get_parent()
 
 func _onSelected() -> void:
-	spawn()
+	pass
 
 func spawn() -> void:
 	if grid.getData(self.position, "units"): return

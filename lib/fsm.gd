@@ -14,8 +14,9 @@ func _ready() -> void:
 		State.set_meta("name", name)
 		states[name] = State
 
-	# Set initial state to default
-	change(states[default])
+	# Default initial state
+	if default:
+		change(states[default])
 
 func change(State: Script) -> void:
 	var name: String = State.get_meta("name")
