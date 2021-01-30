@@ -1,11 +1,10 @@
 class_name Fsm extends Node
 
+export var default: String
 export(Array, Script) var States
 
-export var states = {}
-export var default: String
-
 var state: Node
+var states = {}
 
 func _ready() -> void:
 	for State in States:
@@ -18,7 +17,10 @@ func _ready() -> void:
 	if default:
 		change(states[default])
 
-func change(State: Script) -> void:
+# State may be `Script` or `int`
+func change(State) -> Node:
+	if typeof(State) == TYPE_INT: State = States[State]
+
 	var name: String = State.get_meta("name")
 
 	# Safeguard against state injections
@@ -38,3 +40,5 @@ func change(State: Script) -> void:
 
 	state = newState
 	add_child(state)
+
+	return state
