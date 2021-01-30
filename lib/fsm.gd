@@ -15,7 +15,6 @@ func _ready() -> void:
 		states[name] = State
 
 	# Set initial state to default
-	# change(default)
 	change(states[default])
 
 func change(State: Script) -> void:
