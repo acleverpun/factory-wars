@@ -11,16 +11,16 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.action"):
 		var data := grid.getAllData(event.position)
 
-		if not data.has("selectable"):
+		if not data.has("selecting"):
 			deselect()
 			return
 
 		# Check for selectable nodes in order of precedence
 		var node: Node
-		if data.selectable.has("units"):
-			node = data.selectable.units
-		elif data.selectable.has("buildings"):
-			node = data.selectable.buildings
+		if data.selecting.has("units"):
+			node = data.selecting.units
+		elif data.selecting.has("buildings"):
+			node = data.selecting.buildings
 
 		if not node: return
 
@@ -37,10 +37,10 @@ func select(node: Node) -> void:
 
 	selection = node
 	events.emit_signal("selected", selection)
-	selection.find_node("selectable").emit_signal("selected")
+	selection.find_node("selecting").emit_signal("selected")
 
 func deselect() -> void:
 	if not selection: return
 	events.emit_signal("deselected", selection)
-	selection.find_node("selectable").emit_signal("deselected")
+	selection.find_node("selecting").emit_signal("deselected")
 	selection = null
