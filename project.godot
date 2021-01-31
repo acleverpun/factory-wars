@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/io.gd"
 }, {
+"base": "Node",
+"class": "Mode",
+"language": "GDScript",
+"path": "res://src/systems/modes/mode.gd"
+}, {
 "base": "Fsm",
 "class": "Modes",
 "language": "GDScript",
@@ -43,6 +48,7 @@ _global_script_class_icons={
 "Fsm": "",
 "Grid": "",
 "IO": "",
+"Mode": "",
 "Modes": "",
 "types": "",
 "utils": ""

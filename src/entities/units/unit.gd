@@ -15,8 +15,11 @@ func init() -> void:
 
 func _onSelected() -> void:
 	prints("Unit selected:", self.name)
-	modes.change(modes.Move)
+	# TODO: this shouldn't be changing modes, the select mode should do this?
+	# TODO: do in movable component
+	modes.change(modes.Move, self)
 
 func _onDeselected() -> void:
 	prints("Unit deselected:", self.name)
+	# TODO: this shouldn't be changing modes, the select mode should do this?
 	modes.change(modes.Select)

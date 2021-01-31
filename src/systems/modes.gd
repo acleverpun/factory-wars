@@ -7,8 +7,8 @@ enum {
 	Move,
 }
 
-func change(State) -> Node:
-	var mode = .change(State)
+func change(State, value = null) -> Node:
+	var mode = .change(State, value)
 
 	events.emit("mode_changed", mode)
 

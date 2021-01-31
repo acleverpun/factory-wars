@@ -18,7 +18,7 @@ func _ready() -> void:
 		change(states[default])
 
 # State may be `Script` or `int`
-func change(State) -> Node:
+func change(State, value = null) -> Node:
 	if typeof(State) == TYPE_INT: State = States[State]
 
 	var name: String = State.get_meta("name")
@@ -32,7 +32,7 @@ func change(State) -> Node:
 	if state:
 		remove_child(state)
 
-	var newState: Node = State.new()
+	var newState: Node = State.new(value)
 	newState.name = utils.lowerFirst(name)
 
 	var oldState: String = state.name if state != null else "NONE"
