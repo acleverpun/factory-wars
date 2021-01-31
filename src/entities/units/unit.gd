@@ -5,7 +5,7 @@ onready var grid: Grid = layer.get_parent()
 onready var instanceId := get_instance_id()
 
 func _ready() -> void:
-	call_deferred("init")
+	call_deferred("setup")
 
-func init() -> void:
+func setup() -> void:
 	grid.setData(self.position, layer.name, instanceId)

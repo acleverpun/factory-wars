@@ -14,9 +14,9 @@ onready var sides = {}
 
 func _ready() -> void:
 	if Engine.editor_hint: return
-	call_deferred("init")
+	call_deferred("setup")
 
-func init() -> void:
+func setup() -> void:
 	# set cell data
 	var position: Vector2 = parent.position + self.position
 	grid.setData(position, layer.name, instanceId)
