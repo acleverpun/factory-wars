@@ -28,7 +28,7 @@ func change(State, value = null) -> Node:
 		printerr("State not found: %s" % State)
 
 	# Replace old state
-	# TODO: add history stack
+	# TODO: add history stack when needed
 	if state:
 		remove_child(state)
 

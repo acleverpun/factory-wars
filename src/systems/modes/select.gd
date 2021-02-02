@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 
 		select(node)
 
-	# TODO(DEBUG)
+	# XXX
 	if Input.is_action_just_pressed("game.context"):
 		modes.change(modes.Move)
 
