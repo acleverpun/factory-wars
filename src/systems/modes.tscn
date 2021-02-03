@@ -6,5 +6,5 @@
 
 [node name="modes" type="Node"]
 script = ExtResource( 2 )
-States = [ ExtResource( 1 ), ExtResource( 3 ) ]
 default = "Select"
+States = [ null, ExtResource( 1 ), ExtResource( 3 ) ]

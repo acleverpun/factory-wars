@@ -2,7 +2,8 @@ class_name Modes extends Fsm
 
 signal mode_changed
 
-enum {
+enum values {
+	Null,
 	Select,
 	Move,
 }

@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 
 	# XXX
 	if Input.is_action_just_pressed("game.context"):
-		modes.change(modes.Move)
+		modes.change(modes.values.Move)
 
 func select(node: Node) -> void:
 	if node == selection: return

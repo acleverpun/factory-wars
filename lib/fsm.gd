@@ -8,6 +8,7 @@ var states = {}
 
 func _ready() -> void:
 	for State in States:
+		if not State: continue
 		var name := utils.getBasename(State.resource_path)
 		prints("Initializing state: %s" % name)
 		State.set_meta("name", name)

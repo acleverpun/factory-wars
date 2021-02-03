@@ -11,13 +11,14 @@ onready var modes: Modes = grid.get_parent().find_node("modes")
 func _ready() -> void:
 	selecting.connect("selected", self, "_onSelected")
 	selecting.connect("deselected", self, "_onDeselected")
+	pass
 
 func _onSelected() -> void:
 	prints("Unit selected:", self.name)
 	# TODO: this shouldn't be changing modes, the select mode should do this?
-	modes.change(modes.Move, self)
+	modes.change(modes.values.Move, self)
 
 func _onDeselected() -> void:
 	prints("Unit deselected:", self.name)
 	# TODO: this shouldn't be changing modes, the select mode should do this?
-	modes.change(modes.Select)
+	modes.change(modes.values.Select)

@@ -7,7 +7,9 @@ func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		modes.change(modes.Select)
+		modes.change(modes.values.Select)
+
+		modes.state.deselect()
 
 		# TODO: deselect unit somehow
 		# deselect self.value
@@ -15,4 +17,4 @@ func _input(event: InputEvent) -> void:
 
 	# XXX
 	if Input.is_action_just_pressed("game.context"):
-		modes.change(modes.Select)
+		modes.change(modes.values.Select)
