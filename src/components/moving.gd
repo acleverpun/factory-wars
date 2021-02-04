@@ -16,9 +16,9 @@ func _ready() -> void:
 func _onSelected() -> void:
 	prints("Unit selected:", self.name)
 	# TODO: this shouldn't be changing modes, the select mode should do this?
-	modes.change(modes.values.Move, self)
+	modes.change(Mode.values.Move, self)
 
 func _onDeselected() -> void:
 	prints("Unit deselected:", self.name)
 	# TODO: this shouldn't be changing modes, the select mode should do this?
-	modes.change(modes.values.Select)
+	modes.change(Mode.values.Select)
