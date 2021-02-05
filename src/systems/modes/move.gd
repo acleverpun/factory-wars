@@ -1,5 +1,7 @@
 extends Mode
 
+const id = Mode.values.Move
+
 onready var modes: Modes = get_parent()
 onready var grid: Grid = modes.get_parent().get_node("grid")
 

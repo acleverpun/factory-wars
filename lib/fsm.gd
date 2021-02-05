@@ -33,6 +33,7 @@ func change(State, value = null) -> Node:
 	if state:
 		remove_child(state)
 
+	# TODO: passing an arg to new makes this no longer generic
 	var newState: Node = State.new(value)
 	newState.name = utils.lowerFirst(name)
 

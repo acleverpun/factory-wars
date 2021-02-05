@@ -1,5 +1,7 @@
 extends Mode
 
+const id = Mode.values.Select
+
 var selection: Node
 
 onready var modes: Modes = get_parent()
