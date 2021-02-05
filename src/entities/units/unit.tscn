@@ -10,5 +10,6 @@ polygon = PoolVector2Array( -12, -12, 12, -12, 12, 12, -12, 12 )
 script = ExtResource( 2 )
 
 [node name="selecting" parent="." instance=ExtResource( 3 )]
+intent = 2
 
 [node name="moving" parent="." instance=ExtResource( 1 )]

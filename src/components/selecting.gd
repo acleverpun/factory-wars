@@ -3,6 +3,8 @@ extends Area2D
 signal selected
 signal deselected
 
+export(Mode.values) var intent
+
 onready var parent := get_parent()
 onready var layer: TileMap = parent.get_parent()
 onready var grid: Grid = layer.get_parent()
