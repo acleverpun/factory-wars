@@ -40,6 +40,15 @@ func getData(position: Vector2, type: String, default = null):
 func setData(position: Vector2, type: String, value) -> void:
 	getAllData(position)[type] = value
 
+func gridToWorld(position: Vector2) -> Vector2:
+	return position * size
+
+func worldToGrid(position: Vector2) -> Vector2:
+	return (position / size).floor()
+
+func snapToGrid(position: Vector2) -> Vector2:
+	return (position / size).floor() * size
+
 func _drawGrid() -> void:
 	var viewport: Viewport = $"/root"
 	for x in range(0, viewport.size.x / size + 1):

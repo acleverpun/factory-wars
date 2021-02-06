@@ -13,6 +13,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if Input.is_action_just_released("ui_select"):
-		prints(self.value.position, event.position)
-
-		self.value.position = event.position
+		# TODO: really figure out how I want to go about grid alignment
+		var pos: Vector2 = event.position - Vector2.ONE * grid.size / 2
+		self.value.position = pos.snapped(Vector2.ONE * grid.size) + Vector2.ONE * grid.size / 2
+		return
