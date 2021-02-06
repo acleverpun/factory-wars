@@ -37,12 +37,15 @@ func select(node: Node) -> void:
 	# change to mode specified by intent
 	var selecting: Area2D = node.find_node("selecting")
 	var intent: int = selecting.intent
-	modes.change(intent, node)
 
-	# select new entity
-	selection = node
-	events.emit_signal("selected", selection)
-	selection.find_node("selecting").emit_signal("selected")
+	if intent != Mode.values.Null:
+		# change to the specified mode
+		modes.change(intent, node)
+
+		# select new entity
+		selection = node
+		events.emit_signal("selected", selection)
+		selection.find_node("selecting").emit_signal("selected")
 
 func deselect() -> void:
 	if not selection: return
