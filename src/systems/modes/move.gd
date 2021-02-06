@@ -10,3 +10,9 @@ func _init(value = null).(value): pass
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
 		modes.change(Mode.values.Select)
+		return
+
+	if Input.is_action_just_released("ui_select"):
+		prints(self.value.position, event.position)
+
+		self.value.position = event.position
