@@ -6,6 +6,7 @@ const Right = size * Vector2.RIGHT
 const Down = size * Vector2.DOWN
 const Left = size * Vector2.LEFT
 const Up = size * Vector2.UP
+const One = size * Vector2.ONE
 
 var store := {}
 var layers := {}
@@ -40,14 +41,15 @@ func getData(position: Vector2, type: String, default = null):
 func setData(position: Vector2, type: String, value) -> void:
 	getAllData(position)[type] = value
 
-func gridToWorld(position: Vector2) -> Vector2:
-	return position * size
-
-func worldToGrid(position: Vector2) -> Vector2:
+func toGrid(position: Vector2) -> Vector2:
 	return (position / size).floor()
 
-func snapToGrid(position: Vector2) -> Vector2:
-	return (position / size).floor() * size
+func toWorld(position: Vector2) -> Vector2:
+	return position * size + One / 2
+
+func snapped(position: Vector2) -> Vector2:
+	var pos := position - One / 2
+	return pos.snapped(One) + One / 2
 
 func _drawGrid() -> void:
 	var viewport: Viewport = $"/root"
