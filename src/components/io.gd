@@ -5,8 +5,8 @@ export(types.DirectionFlags, FLAGS) var inputs = 0
 export(types.DirectionFlags, FLAGS) var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
-onready var parent := get_parent()
-onready var layer: TileMap = parent.get_parent()
+onready var entity := get_parent()
+onready var layer: TileMap = entity.get_parent()
 onready var grid: Grid = layer.get_parent()
 onready var instanceId := get_instance_id()
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func setup() -> void:
 	# set cell data
-	var position: Vector2 = parent.position + self.position
+	var position: Vector2 = entity.position + self.position
 	grid.setData(position, layer.name, instanceId)
 
 	# make connections
