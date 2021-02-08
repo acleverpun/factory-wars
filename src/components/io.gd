@@ -1,11 +1,10 @@
 tool
-class_name IO extends Polygon2D
+class_name IO extends Component
 
 export(types.DirectionFlags, FLAGS) var inputs = 0
 export(types.DirectionFlags, FLAGS) var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
-onready var entity := get_parent()
 onready var layer: TileMap = entity.get_parent()
 onready var grid: Grid = layer.get_parent()
 onready var instanceId := get_instance_id()
@@ -15,10 +14,11 @@ onready var sides = {}
 func _ready() -> void:
 	if Engine.editor_hint: return
 	call_deferred("setup")
+	entity.connect("draw", self, "_draw")
 
 func setup() -> void:
 	# set cell data
-	var position: Vector2 = entity.position + self.position
+	var position: Vector2 = entity.position
 	grid.setData(position, layer.name, instanceId)
 
 	# make connections
@@ -52,7 +52,7 @@ func drawArrow(angle: float, ioType: int) -> void:
 	if ioType == types.IO.Input:
 		arrow.find_node("center").rotate(PI)
 
-	add_child(arrow)
+	entity.add_child(arrow)
 
 func addConnection(otherIO: IO, dir: Vector2) -> void:
 	sides[dir] = otherIO

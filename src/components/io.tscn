@@ -2,7 +2,5 @@
 
 [ext_resource path="res://src/components/io.gd" type="Script" id=1]
 
-[node name="io" type="Polygon2D"]
-color = Color( 0.360784, 0.12549, 0.12549, 0.207843 )
-polygon = PoolVector2Array( -16, -16, 16, -16, 16, -16, 16, 16, -16, 16 )
+[node name="io" type="Node"]
 script = ExtResource( 1 )
