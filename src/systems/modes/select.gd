@@ -35,7 +35,7 @@ func select(node: Node) -> void:
 	deselect()
 
 	# change to mode specified by intent
-	var selecting: Area2D = node.find_node("selecting")
+	var selecting := node.find_node("selecting")
 	var intent: int = selecting.intent
 	if intent != Mode.values.Null:
 		modes.change(intent, node)
