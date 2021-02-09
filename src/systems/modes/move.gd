@@ -13,5 +13,8 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if Input.is_action_just_released("ui_select"):
-		self.value.position = grid.snapped(event.position)
+		move(self.value, event.position)
 		return
+
+func move(entity: Node2D, position: Vector2) -> void:
+	entity.position = grid.snapped(position)

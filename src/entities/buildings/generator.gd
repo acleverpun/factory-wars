@@ -1,4 +1,4 @@
-extends Polygon2D
+extends Entity
 
 export var value := 0
 export var gain := 10
