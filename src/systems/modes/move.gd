@@ -3,7 +3,6 @@ extends Mode
 const id = Mode.values.Move
 
 onready var modes: Modes = get_parent()
-onready var grid: Grid = modes.get_parent().get_node("grid")
 
 func _init(value = null).(value): pass
 
@@ -17,4 +16,4 @@ func _input(event: InputEvent) -> void:
 		return
 
 func move(entity: Node2D, position: Vector2) -> void:
-	entity.position = grid.snapped(position)
+	entity.position = self.grid.snapped(position)

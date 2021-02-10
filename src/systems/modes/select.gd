@@ -1,47 +1,40 @@
 extends Mode
 
-const id = Mode.values.Select
+const id := Mode.values.Select
+const group := "selecting"
 
-var selection: Node
+var selection: Entity
 
 onready var modes: Modes = get_parent()
-onready var grid: Grid = modes.get_parent().get_node("grid")
 
 func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):
-		var data := grid.getAllData(event.position)
+		var gridPos := self.map.grid.toGrid(event.position)
 
-		if not data.has("selecting"):
-			deselect()
-			return
+		# TODO: improve
+		var unit := self.map.layers.getEntity("units", gridPos) as Entity
+		var building := self.map.layers.getEntity("buildings", gridPos) as Entity
 
 		# Check for selectable nodes in order of precedence
-		var node: Node
-		if data.selecting.has("units"):
-			node = data.selecting.units
-		elif data.selecting.has("buildings"):
-			node = data.selecting.buildings
+		if not trySelect(unit):
+			trySelect(building)
 
-		if not node: return
-
-		select(node)
-
-func select(node: Node) -> void:
-	if node == selection: return
+func select(entity: Entity) -> void:
+	if entity == selection: return
 
 	# deselect prior entity, if any
 	deselect()
 
 	# change to mode specified by intent
-	var selecting := node.find_node("selecting")
+	var selecting := entity.find_node("selecting")
 	var intent: int = selecting.intent
 	if intent != Mode.values.Null:
-		modes.change(intent, node)
+		modes.change(intent, entity)
 
 	# select new entity
-	selection = node
+	selection = entity
 	events.emit_signal("selected", selection)
 	selection.find_node("selecting").emit_signal("selected")
 
@@ -50,3 +43,13 @@ func deselect() -> void:
 	events.emit_signal("deselected", selection)
 	selection.find_node("selecting").emit_signal("deselected")
 	selection = null
+
+func trySelect(entity: Entity) -> bool:
+	if not entity or not entity.is_in_group(group):
+		deselect()
+		return false
+
+	if not entity: return false
+
+	select(entity)
+	return true

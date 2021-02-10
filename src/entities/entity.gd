@@ -1,8 +1,12 @@
 class_name Entity extends Node2D
 
-onready var layer: TileMap = get_parent()
-onready var grid: Grid = layer.get_parent()
 onready var id := get_instance_id()
+onready var map: Map = get_tree().current_scene
+onready var layer := get_parent()
 
 func _ready() -> void:
-	grid.setData(self.position, layer.name, id)
+	call_deferred("setup")
+
+func setup() -> void:
+	# set EID in map data
+	map.layers.setData(layer.name, map.grid.toGrid(self.position), id)
