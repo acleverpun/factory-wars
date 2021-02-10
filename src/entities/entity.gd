@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func setup() -> void:
 	# set EID in map data
-	map.layers.setData(layer.name, map.grid.toGrid(self.position), id)
+	map.layers.setData(layer.name, grid.toGrid(self.position), id)

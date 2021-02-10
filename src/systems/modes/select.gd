@@ -11,7 +11,7 @@ func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):
-		var gridPos := self.map.grid.toGrid(event.position)
+		var gridPos := grid.toGrid(event.position)
 
 		# TODO: improve
 		var unit := self.map.layers.getEntity("units", gridPos) as Entity

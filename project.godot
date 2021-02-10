@@ -24,10 +24,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://lib/fsm.gd"
 }, {
-"base": "TileMap",
+"base": "Reference",
 "class": "Grid",
 "language": "GDScript",
-"path": "res://src/controllers/grid.gd"
+"path": "res://lib/grid.gd"
 }, {
 "base": "Component",
 "class": "IO",
@@ -88,6 +88,7 @@ config/icon="res://assets/icons/icon.png"
 
 events="*res://src/systems/events.gd"
 mappings="*res://src/systems/mappings.gd"
+grid="*res://lib/grid.gd"
 
 [debug]
 

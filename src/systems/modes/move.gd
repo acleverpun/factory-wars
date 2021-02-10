@@ -16,4 +16,4 @@ func _input(event: InputEvent) -> void:
 		return
 
 func move(entity: Node2D, position: Vector2) -> void:
-	entity.position = self.grid.snapped(position)
+	entity.position = grid.snapped(position)
