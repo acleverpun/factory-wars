@@ -1,1 +1,3 @@
 extends Component
+
+signal moved

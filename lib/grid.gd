@@ -8,6 +8,8 @@ const Left = size * Vector2.LEFT
 const Up = size * Vector2.UP
 const One = size * Vector2.ONE
 
+onready var viewport: Viewport = $"/root"
+
 func _init() -> void:
 	self.cell_size = Vector2(size, size)
 
@@ -32,7 +34,6 @@ func _drawLine(from, to) -> void:
 	self.add_child(line)
 
 func _drawGrid() -> void:
-	var viewport: Viewport = $"/root"
 	for x in range(0, viewport.size.x / size + 1):
 		_drawLine(Vector2(x * size, 0), Vector2(x * size, viewport.size.y))
 	for y in range(0, viewport.size.y / size + 1):
