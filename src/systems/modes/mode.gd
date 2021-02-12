@@ -1,7 +1,7 @@
 class_name Mode extends Node
 
 enum Type {
-	Null,
+	None,
 	Select,
 	Move,
 }

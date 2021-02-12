@@ -1,4 +1,4 @@
-extends Entity
+extends Building
 
 const Unit = preload("res://src/entities/units/unit.tscn")
 

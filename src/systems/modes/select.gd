@@ -1,6 +1,6 @@
 extends Mode
 
-const id := Mode.Type.Select
+const type := Mode.Type.Select
 const group := "selecting"
 
 var selection: Entity
@@ -30,7 +30,7 @@ func select(entity: Entity) -> void:
 	# change to mode specified by intent
 	var selecting := entity.find_node("selecting")
 	var intent: int = selecting.intent
-	if intent != Mode.Type.Null:
+	if intent != Mode.Type.None:
 		modes.change(intent, entity)
 
 	# select new entity

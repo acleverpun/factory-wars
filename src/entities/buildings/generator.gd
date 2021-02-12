@@ -1,4 +1,4 @@
-extends Entity
+extends Building
 
 export var value := 0
 export var gain := 10

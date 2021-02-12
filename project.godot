@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Entity",
+"class": "Building",
+"language": "GDScript",
+"path": "res://src/entities/buildings/building.gd"
+}, {
 "base": "Node",
 "class": "Component",
 "language": "GDScript",
@@ -54,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/systems/modes.gd"
 }, {
+"base": "Entity",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://src/entities/units/unit.gd"
+}, {
 "base": "Reference",
 "class": "types",
 "language": "GDScript",
@@ -65,6 +75,7 @@ _global_script_classes=[ {
 "path": "res://lib/utils.gd"
 } ]
 _global_script_class_icons={
+"Building": "",
 "Component": "",
 "Entity": "",
 "Fsm": "",
@@ -74,6 +85,7 @@ _global_script_class_icons={
 "Map": "",
 "Mode": "",
 "Modes": "",
+"Unit": "",
 "types": "",
 "utils": ""
 }
