@@ -1,6 +1,6 @@
 extends Mode
 
-const id = Mode.values.Move
+const id = Mode.Type.Move
 
 onready var modes: Modes = get_parent()
 
@@ -8,7 +8,7 @@ func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
-		modes.change(Mode.values.Select)
+		modes.change(Mode.Type.Select)
 		return
 
 	if Input.is_action_just_released("ui_select"):

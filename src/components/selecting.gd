@@ -3,4 +3,4 @@ extends Component
 signal selected
 signal deselected
 
-export(Mode.values) var intent
+export(Mode.Type) var intent
