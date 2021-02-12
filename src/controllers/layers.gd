@@ -1,32 +1,40 @@
 class_name Layers extends Node
 
-var layers := {}
-var data := {}
+var entityMap := { Entity.Type.Building: {}, Entity.Type.Unit: {} }
+var entitySet := { Entity.Type.Building: {}, Entity.Type.Unit: {} }
+var layerMap := { Entity.Type.Building: {}, Entity.Type.Unit: {} }
 
 func _ready() -> void:
-	for child in get_children():
-		layers[child.name] = child
-		data[child.name] = {}
+	for layer in get_children():
+		entityMap[layer.name] = {}
+		entitySet[layer.name] = {}
+		layerMap[layer.name] = layer
 
-func getData(layer: String, position: Vector2, default = null) -> int:
-	return data[layer].get(position, default)
+func getData(type: int, position: Vector2, default = null) -> int:
+	return entityMap[type].get(position, default)
 
-func setData(layer: String, position: Vector2, value) -> void:
-	data[layer][position] = value
+func setData(type: int, position: Vector2, value) -> void:
+	entityMap[type][position] = value
 
-func getEntity(layer: String, position: Vector2, default = null) -> Node:
-	var id := getData(layer, position, default)
+func getEntity(type: int, position: Vector2, default = null) -> Node:
+	var id := getData(type, position, default)
 	if id == null: return null
 	return instance_from_id(id) as Node
 
-func setEntity(layer: String, position: Vector2, entity: Node) -> void:
-	setData(layer, position, entity.get_instance_id())
+func addEntity(entity: Entity) -> void:
+	var id = entity.get_instance_id()
 
-# TODO: revisit
-func addNode(Class: Resource, layerName: String, position: Vector2) -> void:
-	assert(layers.has(layerName))
-	var layer := layers[layerName] as Node
+	# set EID in map data
+	setData(entity.type, grid.toGrid(entity.position), id)
 
-	var node = Class.instance()
-	node.position = position
-	layer.add_child(node)
+	# add EID to set
+	entitySet[entity.type][id] = true
+
+func rebuildEntityMap() -> void:
+	for layerName in entityMap:
+		var entityMapLayer = {}
+		for id in entitySet[layerName]:
+			var entity: Node2D = instance_from_id(id)
+			var gridPos := grid.toGrid(entity.position)
+			entityMapLayer[gridPos] = entity.get_instance_id()
+		entityMap[layerName] = entityMapLayer

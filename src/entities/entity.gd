@@ -9,8 +9,7 @@ enum Type {
 var type = Type.None
 
 onready var id := get_instance_id()
-onready var map: Map = get_tree().current_scene
-onready var layer := get_parent()
+onready var map = get_tree().current_scene
 
 func _ready() -> void:
 	assert(type != Type.None, "A None type slipped through.")
@@ -19,5 +18,4 @@ func _ready() -> void:
 	call_deferred("setup")
 
 func setup() -> void:
-	# set EID in map data
-	map.layers.setData(layer.name, grid.toGrid(self.position), id)
+	map.layers.addEntity(self)

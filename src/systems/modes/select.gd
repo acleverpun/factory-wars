@@ -14,8 +14,8 @@ func _input(event: InputEvent) -> void:
 		var gridPos := grid.toGrid(event.position)
 
 		# TODO: improve
-		var unit := self.map.layers.getEntity("units", gridPos) as Entity
-		var building := self.map.layers.getEntity("buildings", gridPos) as Entity
+		var unit := self.map.layers.getEntity(Entity.Type.Unit, gridPos) as Entity
+		var building := self.map.layers.getEntity(Entity.Type.Building, gridPos) as Entity
 
 		# Check for selectable nodes in order of precedence
 		if not trySelect(unit):
