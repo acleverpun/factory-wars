@@ -17,4 +17,5 @@ func _input(event: InputEvent) -> void:
 
 func move(entity: Node2D, position: Vector2) -> void:
 	entity.position = grid.snapped(position)
+	self.map.layers.updateEntity(entity)
 	entity.find_node("moving").emit_signal("moved")
