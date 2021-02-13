@@ -39,11 +39,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/io.gd"
 }, {
-"base": "Node",
-"class": "Layers",
-"language": "GDScript",
-"path": "res://src/controllers/layers.gd"
-}, {
 "base": "Node2D",
 "class": "Map",
 "language": "GDScript",
@@ -81,7 +76,6 @@ _global_script_class_icons={
 "Fsm": "",
 "Grid": "",
 "IO": "",
-"Layers": "",
 "Map": "",
 "Mode": "",
 "Modes": "",

@@ -18,4 +18,4 @@ func _ready() -> void:
 	call_deferred("setup")
 
 func setup() -> void:
-	map.layers.addEntity(self)
+	map.addEntity(self)

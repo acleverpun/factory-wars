@@ -23,7 +23,7 @@ func setup() -> void:
 	# # make connections
 	# for dir in types.Direction:
 	# 	if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-	# 		var otherId = self.map.layers.getData(layer.name, position + Grid[dir])
+	# 		var otherId = self.map.getData(layer.name, position + Grid[dir])
 	# 		if !otherId: continue
   #
 	# 		var otherIO: IO = instance_from_id(otherId)
