@@ -1,6 +1,6 @@
 extends Mode
 
-const type = Mode.Type.Move
+const type := Mode.Type.Move
 
 onready var modes: Modes = get_parent()
 

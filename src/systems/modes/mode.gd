@@ -4,6 +4,7 @@ enum Type {
 	None,
 	Select,
 	Move,
+	Build,
 }
 
 var value

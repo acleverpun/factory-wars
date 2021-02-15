@@ -10,5 +10,8 @@ polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
 script = ExtResource( 2 )
 
 [node name="selecting" parent="." instance=ExtResource( 3 )]
+intent = 3
 
 [node name="io" parent="." instance=ExtResource( 1 )]
+inputs = 0
+outputs = 0
