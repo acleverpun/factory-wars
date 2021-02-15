@@ -2,8 +2,6 @@ extends Mode
 
 const type := Mode.Type.Move
 
-onready var modes: Modes = get_parent()
-
 func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:

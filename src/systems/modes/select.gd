@@ -5,8 +5,6 @@ const group := "selecting"
 
 var selection: Entity
 
-onready var modes: Modes = get_parent()
-
 func _init(value = null).(value): pass
 
 func _input(event: InputEvent) -> void:
