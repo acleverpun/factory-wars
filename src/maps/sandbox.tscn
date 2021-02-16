@@ -17,17 +17,13 @@ script = ExtResource( 9 )
 
 [node name="entities" type="Node" parent="."]
 
-[node name="buildings" type="Node" parent="entities"]
-
-[node name="factory" parent="entities/buildings" instance=ExtResource( 3 )]
+[node name="factory" parent="entities" instance=ExtResource( 3 )]
 position = Vector2( 304, 272 )
 
-[node name="generator" parent="entities/buildings" instance=ExtResource( 4 )]
+[node name="generator" parent="entities" instance=ExtResource( 4 )]
 position = Vector2( 272, 272 )
 
-[node name="units" type="Node" parent="entities"]
-
-[node name="unit" parent="entities/units" instance=ExtResource( 7 )]
+[node name="unit" parent="entities" instance=ExtResource( 7 )]
 position = Vector2( 304, 336 )
 
 [node name="hud" parent="." instance=ExtResource( 6 )]

@@ -5,7 +5,6 @@ export(types.DirectionFlags, FLAGS) var inputs = 0
 export(types.DirectionFlags, FLAGS) var outputs = 0
 
 onready var Arrow := preload("res://src/gui/arrow.tscn")
-onready var layer: Node = self.entity.get_parent()
 
 onready var sides = {}
 
@@ -23,7 +22,7 @@ func setup() -> void:
 	# # make connections
 	# for dir in types.Direction:
 	# 	if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-	# 		var otherId = self.map.getData(layer.name, position + Grid[dir])
+	# 		var otherId = self.map.getData(position + Grid[dir])
 	# 		if !otherId: continue
   #
 	# 		var otherIO: IO = instance_from_id(otherId)

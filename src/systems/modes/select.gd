@@ -12,19 +12,15 @@ func _input(event: InputEvent) -> void:
 		var gridPos := grid.toGrid(event.position)
 
 		# TODO: improve
-		var unit := self.map.getEntity(Entity.Type.Unit, gridPos) as Entity
-		var building := self.map.getEntity(Entity.Type.Building, gridPos) as Entity
+		var entity := self.map.getEntity(gridPos)
 
 		# Check for selectable nodes in order of precedence
-		if not trySelect(unit):
-			trySelect(building)
+		if isValid(entity):
+			select(entity)
+		else:
+			deselect()
 
 func select(entity: Entity) -> void:
-	if entity == selection: return
-
-	# deselect prior entity, if any
-	deselect()
-
 	# change to mode specified by intent
 	var selecting := entity.find_node("selecting")
 	var intent: int = selecting.intent
@@ -42,12 +38,5 @@ func deselect() -> void:
 	selection.find_node("selecting").emit_signal("deselected")
 	selection = null
 
-func trySelect(entity: Entity) -> bool:
-	if not entity or not entity.is_in_group(group):
-		deselect()
-		return false
-
-	if not entity: return false
-
-	select(entity)
-	return true
+func isValid(entity: Entity) -> bool:
+	return entity and entity.is_in_group(group)

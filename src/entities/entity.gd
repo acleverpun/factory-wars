@@ -1,5 +1,6 @@
 class_name Entity extends Node2D
 
+# TODO: consider removing now that it's (currently) unused
 enum Type {
 	None,
 	Building,
