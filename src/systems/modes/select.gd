@@ -10,11 +10,9 @@ func _init(value = null).(value): pass
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):
 		var gridPos := grid.toGrid(event.position)
-
-		# TODO: improve
 		var entity := self.map.getEntity(gridPos)
 
-		# Check for selectable nodes in order of precedence
+		# Check for selectable nodes
 		if isValid(entity):
 			select(entity)
 		else:
