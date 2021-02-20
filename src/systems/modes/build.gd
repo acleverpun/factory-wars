@@ -1,5 +1,6 @@
 extends Mode
 
+const UnitScene = preload("res://src/entities/units/unit.tscn")
 const factoryDialog = preload("res://src/gui/factoryDialog.tscn")
 
 var dialog: PopupDialog
@@ -21,4 +22,4 @@ func _input(event: InputEvent) -> void:
 		return
 
 func _onBuy(unitData) -> void:
-	modes.change(Mode.Type.Place, Unit)
+	modes.change(Mode.Type.Place, [ value, UnitScene ])
