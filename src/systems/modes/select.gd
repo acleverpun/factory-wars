@@ -4,7 +4,7 @@ const group := "selecting"
 
 var selection: Entity
 
-func _init(value = null).(Mode.Type.Select, value): pass
+func _init(data).(Mode.Type.Select, data): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):
@@ -22,7 +22,7 @@ func select(entity: Entity) -> void:
 	var selecting := entity.find_node("selecting")
 	var intent: int = selecting.intent
 	if intent != Mode.Type.None:
-		modes.change(intent, entity)
+		modes.change(intent, { "entity": entity })
 
 	# select new entity
 	selection = entity

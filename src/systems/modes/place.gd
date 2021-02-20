@@ -2,11 +2,11 @@ extends Mode
 
 onready var entities := map.find_node("entities")
 
-func _init(value = null).(Mode.Type.Place, value): pass
+func _init(data).(Mode.Type.Place, data): pass
 
 func _ready() -> void:
-	var building: Building = value[0]
-	var unit: Unit = value[1].instance()
+	var building: Building = self.data.entity
+	var unit: Unit = self.data.unitScene.instance()
 
 	unit.position = grid.snapped(building.position) + grid.Down
 	entities.add_child(unit)

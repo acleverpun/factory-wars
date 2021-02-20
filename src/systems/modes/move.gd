@@ -1,6 +1,6 @@
 extends Mode
 
-func _init(value = null).(Mode.Type.Move, value): pass
+func _init(data).(Mode.Type.Move, data): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
@@ -8,8 +8,8 @@ func _input(event: InputEvent) -> void:
 		return
 
 	if Input.is_action_just_released("ui_select"):
-		if isValid(self.value, event.position):
-			move(self.value, event.position)
+		if isValid(self.data.entity, event.position):
+			move(self.data.entity, event.position)
 		return
 
 func move(entity: Node2D, position: Vector2) -> void:

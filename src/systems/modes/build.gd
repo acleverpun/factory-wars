@@ -5,7 +5,7 @@ const factoryDialog = preload("res://src/gui/factoryDialog.tscn")
 
 var dialog: PopupDialog
 
-func _init(value = null).(Mode.Type.Build, value): pass
+func _init(data).(Mode.Type.Build, data): pass
 
 func _ready() -> void:
 	dialog = factoryDialog.instance()
@@ -22,4 +22,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 func _onBuy(unitData) -> void:
-	modes.change(Mode.Type.Place, [ value, UnitScene ])
+	modes.change(Mode.Type.Place, {
+		"entity": self.data.entity,
+		"unitScene": UnitScene,
+	})

@@ -14,11 +14,16 @@ var modeStates := [
 func _init() -> void:
 	States = modeStates
 
-func change(type, value = null) -> Node:
+func change(type, data: Dictionary = {}) -> Node:
 	# TODO: this relies on Mode.Type being in the same order as Fsm.States
-	# var mode = .change(self.States[type], value)
-	var mode = .change(type, value)
+	# var mode = .change(self.States[type])
 
+	# TODO: referring to Mode is a cyclic ref
+	# var mode: Mode = .change(type)
+
+	var mode: Node = .change(type, data)
+
+	# TODO: cannot emit with multiple arguments yet, pending some issue
 	events.emit("mode_changed", mode)
 
 	return mode
