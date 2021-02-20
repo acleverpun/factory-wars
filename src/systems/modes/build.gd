@@ -1,7 +1,7 @@
 extends Mode
 
-const UnitScene = preload("res://src/entities/units/unit.tscn")
-const factoryDialog = preload("res://src/gui/factoryDialog.tscn")
+const UnitScene := preload("res://src/entities/units/unit.tscn")
+const factoryDialog := preload("res://src/gui/factoryDialog.tscn")
 
 var dialog: PopupDialog
 
