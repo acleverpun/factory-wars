@@ -9,6 +9,7 @@ func _init(data).(Mode.Type.Build, data): pass
 
 func _ready() -> void:
 	dialog = factoryDialog.instance()
+	dialog.setData(self.data)
 	dialog.connect("bought", self, "_onBuy")
 	map.add_child(dialog)
 

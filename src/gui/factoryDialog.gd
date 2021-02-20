@@ -2,26 +2,9 @@ extends PopupDialog
 
 signal bought
 
-var listItems := [
-	{
-		"name": "Foo",
-		"description": "Foooooood.",
-		"cost": 10,
-	},
-	{
-		"name": "Bar",
-		"description": "Baaaaaard.",
-		"cost": 20,
-	},
-	{
-		"name": "Baz",
-		"enabled": false,
-		"description": "Baaaaaaaz.",
-		"cost": 2,
-	},
-]
-
 var selected: int
+var factory: Factory
+var listItems: Array
 
 onready var buyButton: Button = $buy
 onready var description: RichTextLabel = $description
@@ -34,11 +17,15 @@ func _ready() -> void:
 func _populate() -> void:
 	list.clear()
 
-	for index in len(listItems):
-		var listItem = listItems[index]
+	for l in len(listItems):
+		var listItem = listItems[l]
 		list.add_item(listItem.name)
-		list.set_item_disabled(index, not listItem.get("enabled", true))
-		list.set_item_metadata(index, listItem)
+		list.set_item_disabled(l, not listItem.enabled)
+		list.set_item_metadata(l, listItem)
+
+func setData(data: Dictionary) -> void:
+	factory = data.get("entity")
+	listItems = factory.unitList
 
 func _onChange(index: int) -> void:
 	if list.is_item_disabled(index): return
