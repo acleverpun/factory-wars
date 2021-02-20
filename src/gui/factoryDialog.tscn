@@ -3,7 +3,6 @@
 [ext_resource path="res://src/gui/factoryDialog.gd" type="Script" id=1]
 
 [node name="factoryDialog" type="PopupDialog"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -42,9 +41,11 @@ margin_left = 896.0
 margin_top = 440.0
 margin_right = 931.0
 margin_bottom = 460.0
+disabled = true
 text = "buy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [connection signal="item_selected" from="list" to="." method="_onChange"]
+[connection signal="pressed" from="buy" to="." method="_onBuy"]

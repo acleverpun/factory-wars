@@ -5,12 +5,15 @@ enum Type {
 	Select,
 	Move,
 	Build,
+	Place,
 }
 
+var type: int
 var value
 
 onready var map: Map = get_tree().current_scene
 onready var modes: Modes = get_parent()
 
-func _init(arg = null):
+func _init(_type = Type.None, arg = null):
+	type = _type
 	value = arg

@@ -1,6 +1,6 @@
 extends Building
 
-const Unit = preload("res://src/entities/units/unit.tscn")
+const UnitScene = preload("res://src/entities/units/unit.tscn")
 
 export var value := 0
 

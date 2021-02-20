@@ -1,11 +1,10 @@
 extends Mode
 
-const type := Mode.Type.Select
 const group := "selecting"
 
 var selection: Entity
 
-func _init(value = null).(value): pass
+func _init(value = null).(Mode.Type.Select, value): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):

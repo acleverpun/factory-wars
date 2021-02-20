@@ -8,6 +8,7 @@ var modeStates := [
 	load("res://src/systems/modes/select.gd"),
 	load("res://src/systems/modes/move.gd"),
 	load("res://src/systems/modes/build.gd"),
+	load("res://src/systems/modes/place.gd"),
 ]
 
 func _init() -> void:

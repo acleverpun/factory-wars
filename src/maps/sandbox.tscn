@@ -24,6 +24,6 @@ position = Vector2( 304, 272 )
 position = Vector2( 272, 272 )
 
 [node name="unit" parent="entities" instance=ExtResource( 7 )]
-position = Vector2( 304, 336 )
+position = Vector2( 496, 368 )
 
 [node name="hud" parent="." instance=ExtResource( 6 )]
