@@ -9,3 +9,4 @@ entity = ExtResource( 1 )
 name = "tank"
 description = "Big bad gun on wheels."
 price = 20
+enabled = true

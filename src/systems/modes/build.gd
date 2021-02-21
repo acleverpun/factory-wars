@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 		return
 
 func _onBuy(unitData) -> void:
+	# TODO: do price check here
 	modes.change(Mode.Type.Place, {
 		"entity": self.data.entity,
 		"unitScene": UnitScene,
