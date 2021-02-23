@@ -1,8 +1,15 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
-[ext_resource path="res://src/models/cache.tres" type="Resource" id=1]
+[ext_resource path="res://lib/models/cacheModel.gd" type="Script" id=1]
 [ext_resource path="res://src/entities/units/unit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://lib/models/unitModel.gd" type="Script" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+money = 20
+food = 0
+iron = 0
+copper = 0
 
 [resource]
 script = ExtResource( 3 )
@@ -10,4 +17,4 @@ entity = ExtResource( 2 )
 name = "tank"
 description = "Big bad gun on wheels."
 enabled = true
-cost = ExtResource( 1 )
+cost = SubResource( 1 )
