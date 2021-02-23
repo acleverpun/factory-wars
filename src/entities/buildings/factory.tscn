@@ -3,8 +3,8 @@
 [ext_resource path="res://src/components/io.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/entities/buildings/factory.gd" type="Script" id=2]
 [ext_resource path="res://src/components/selecting.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/resources/units/tank.tres" type="Resource" id=4]
-[ext_resource path="res://src/resources/units/infantry.tres" type="Resource" id=5]
+[ext_resource path="res://src/models/units/tank.tres" type="Resource" id=4]
+[ext_resource path="res://src/models/units/infantry.tres" type="Resource" id=5]
 
 [node name="factory" type="Polygon2D"]
 color = Color( 0.172549, 0.67451, 0.113725, 1 )

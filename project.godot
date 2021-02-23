@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "UnitData",
 "language": "GDScript",
-"path": "res://src/entities/units/unitData.gd"
+"path": "res://lib/models/unitModel.gd"
 }, {
 "base": "Reference",
 "class": "types",
