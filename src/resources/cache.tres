@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/components/cache.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+money = 0
+food = 0
+iron = 0
+copper = 0

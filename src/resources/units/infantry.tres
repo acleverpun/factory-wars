@@ -8,4 +8,4 @@ script = ExtResource( 1 )
 entity = ExtResource( 2 )
 name = "infantry"
 description = "A little guy that walks on his own two feet."
-price = 10
+enabled = true
