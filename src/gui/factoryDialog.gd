@@ -9,6 +9,7 @@ var listItems: Array
 onready var buyButton: Button = $buy
 onready var description: RichTextLabel = $description
 onready var list: ItemList = $list
+onready var price: RichTextLabel = $price
 
 func _ready() -> void:
 	_populate()
@@ -33,7 +34,8 @@ func _onChange(index: int) -> void:
 	selected = index
 
 	var listItem = listItems[index]
-	description.bbcode_text = listItem.description
+	description.text = listItem.description
+	price.text = str(listItem.cost.money)
 
 	buyButton.disabled = false
 
