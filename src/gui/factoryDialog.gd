@@ -20,7 +20,7 @@ func _populate() -> void:
 
 	for l in len(listItems):
 		var listItem = listItems[l]
-		list.add_item(listItem.name)
+		list.add_item("%s [%d]" % [ listItem.name, listItem.cost.money ])
 		list.set_item_disabled(l, not listItem.enabled)
 		list.set_item_metadata(l, listItem)
 
