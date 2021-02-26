@@ -23,8 +23,11 @@ func _input(event: InputEvent) -> void:
 		return
 
 func _onBuy(unitModel) -> void:
-	# TODO: do price check here
-	prints("onBuy", unitModel.name, unitModel.cost.money, self.data.entity)
+	if not map.cache.contains(unitModel.cost):
+		prints("Nope. Not enough money.")
+		return
+
+	map.cache.subtract(unitModel.cost)
 
 	modes.change(Mode.Type.Place, {
 		"entity": self.data.entity,
