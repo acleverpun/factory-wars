@@ -1,6 +1,7 @@
 class_name Entity extends Node2D
 
 var model: Resource
+var components: Dictionary
 
 onready var id := get_instance_id()
 onready var map = get_tree().current_scene
