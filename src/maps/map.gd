@@ -1,6 +1,6 @@
 class_name Map extends Node2D
 
-export(Resource) var cache = preload("res://src/models/cache.tres")
+export(Cache) var cache: Cache
 
 # TYPE: map[Vector2][int]
 var entityMap := {}

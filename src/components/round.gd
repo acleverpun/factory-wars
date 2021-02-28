@@ -8,6 +8,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.debug"):
 		prints(value)
+		prints(get_node("/root/map").cache)
 	elif Input.is_action_just_pressed("ui_accept"):
 		nextRound()
 

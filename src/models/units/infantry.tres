@@ -6,10 +6,10 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 1 )
-money = 10
+copper = 0
 food = 0
 iron = 0
-copper = 0
+money = 10
 
 [resource]
 script = ExtResource( 3 )

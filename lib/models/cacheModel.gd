@@ -1,4 +1,4 @@
-extends Resource
+class_name Cache extends Resource
 
 export(int) var copper
 export(int) var food
