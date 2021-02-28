@@ -1,6 +1,6 @@
 class_name Map extends Node2D
 
-export(Cache) var cache: Cache
+export(Cache) var cache
 
 # TYPE: map[Vector2][int]
 var entityMap := {}
