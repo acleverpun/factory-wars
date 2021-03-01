@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/components/io.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/entities/buildings/factory.gd" type="Script" id=2]
 [ext_resource path="res://src/components/selecting.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/models/infantry.tres" type="Resource" id=4]
+[ext_resource path="res://src/models/tank.tres" type="Resource" id=5]
 
 [node name="factory" type="Polygon2D"]
 color = Color( 0.172549, 0.67451, 0.113725, 1 )
 polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
 script = ExtResource( 2 )
+unitList = [ ExtResource( 4 ), ExtResource( 5 ) ]
 
 [node name="selecting" parent="." instance=ExtResource( 3 )]
 intent = 3

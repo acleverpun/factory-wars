@@ -49,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/io.gd"
 }, {
-"base": "UnitModel",
-"class": "Infantry",
-"language": "GDScript",
-"path": "res://lib/models/units/infantry.gd"
-}, {
 "base": "Node2D",
 "class": "Map",
 "language": "GDScript",
@@ -77,7 +72,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "UnitModel",
 "language": "GDScript",
-"path": "res://lib/models/units/unit.gd"
+"path": "res://lib/models/unit.gd"
 }, {
 "base": "Reference",
 "class": "types",
@@ -98,7 +93,6 @@ _global_script_class_icons={
 "Fsm": "",
 "Grid": "",
 "IO": "",
-"Infantry": "",
 "Map": "",
 "Mode": "",
 "Modes": "",
