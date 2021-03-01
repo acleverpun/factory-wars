@@ -13,9 +13,6 @@ func _ready() -> void:
 	dialog.connect("bought", self, "_onBuy")
 	map.add_child(dialog)
 
-func _exit_tree() -> void:
-	dialog.queue_free()
-
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
 		dialog.free()
