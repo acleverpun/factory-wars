@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://lib/models/cache.gd" type="Script" id=1]
+[ext_resource path="res://lib/wrapper.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+copper = 0
+food = 0
+iron = 0
+money = 0
+
+[node name="source" type="Node"]
+script = ExtResource( 2 )
+value = SubResource( 1 )

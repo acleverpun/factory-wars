@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://lib/models/unit.gd"
 }, {
+"base": "Node",
+"class": "Wrapper",
+"language": "GDScript",
+"path": "res://lib/wrapper.gd"
+}, {
 "base": "Reference",
 "class": "types",
 "language": "GDScript",
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "Modes": "",
 "Unit": "",
 "UnitModel": "",
+"Wrapper": "",
 "types": "",
 "utils": ""
 }

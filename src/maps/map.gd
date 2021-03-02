@@ -8,8 +8,7 @@ var entityMap := {}
 # TYPE: map[int][Vector2]
 var positionMap := {}
 
-func _ready() -> void:
-	events.on("round:changed", self, "_onRoundChanged")
+onready var source: Wrapper = $source
 
 # TODO: consider removing
 # NOTE: would be in a generic storage class
@@ -53,7 +52,6 @@ func updateEntityMap() -> void:
 		var cell := grid.toGrid(entity.position)
 		entityMap[cell] = entity.get_instance_id()
 
-func _onRoundChanged(currentRound: int) -> void:
-	# TODO: do this better / more generically
-	cache.money += 10
+func _on_round_changed(currentRound: int) -> void:
+	cache.add(source.value)
 	prints("map: round changed", currentRound, cache.money)

@@ -8,6 +8,12 @@ export(int) var money
 func _to_string() -> String:
 	return "{[Cache] money: %d, copper: %d, food: %d, iron: %d }" % [ money, copper, food, iron ]
 
+func add(other: Resource) -> void:
+	copper += other.copper
+	food += other.food
+	iron += other.iron
+	money += other.money
+
 func subtract(other: Resource) -> void:
 	copper -= other.copper
 	food -= other.food

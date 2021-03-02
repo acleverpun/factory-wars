@@ -1,5 +1,7 @@
 extends Node
 
+signal changed(value)
+
 var value: int
 
 func _ready() -> void:
@@ -14,4 +16,5 @@ func _input(event: InputEvent) -> void:
 
 func nextRound() -> void:
 	value += 1
+	emit_signal("changed", value)
 	events.emit_signal("round:changed", value)
