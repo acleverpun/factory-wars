@@ -1,15 +1,14 @@
 extends Building
 
-export var value := 0
-export var gain := 10
+export(Cache) var cache: Cache
+
+onready var source: Wrapper = $source
 
 func _ready() -> void:
-	events.on("round:changed", self, "_onRoundChanged")
+	events.on("round:changed", self, "_on_round_changed")
 
-func _onRoundChanged(currentRound: int) -> void:
-	# TODO: redo using Cache
-	value += gain
-	prints("round changed", currentRound, value)
+func _on_round_changed(currentRound: int) -> void:
+	cache.add(source.value)
 
-func _onSelected() -> void:
-	prints(value)
+func _on_selected() -> void:
+	prints(cache)
