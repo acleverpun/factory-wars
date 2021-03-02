@@ -10,7 +10,7 @@ func _init(data).(Mode.Type.Build, data): pass
 func _ready() -> void:
 	dialog = factoryDialog.instance()
 	dialog.setData(self.data)
-	dialog.connect("bought", self, "_onBuy")
+	dialog.connect("bought", self, "_on_buy")
 	map.add_child(dialog)
 
 func _exit_tree() -> void:
@@ -22,7 +22,7 @@ func _input(event: InputEvent) -> void:
 		modes.change(Mode.Type.Select)
 		return
 
-func _onBuy(unitModel) -> void:
+func _on_buy(unitModel) -> void:
 	if not map.cache.contains(unitModel.cost):
 		prints("Nope. Not enough money.")
 		return

@@ -28,7 +28,7 @@ func setData(data: Dictionary) -> void:
 	factory = data.get("entity")
 	listItems = factory.unitList
 
-func _onChange(index: int) -> void:
+func _on_change(index: int) -> void:
 	if list.is_item_disabled(index): return
 
 	selected = index
@@ -39,6 +39,6 @@ func _onChange(index: int) -> void:
 
 	buyButton.disabled = false
 
-func _onBuy() -> void:
+func _on_buy() -> void:
 	var listItem = listItems[selected]
 	emit_signal("bought", listItem)
