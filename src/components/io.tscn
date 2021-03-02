@@ -4,3 +4,5 @@
 
 [node name="io" type="Node"]
 script = ExtResource( 1 )
+inputs = 0
+outputs = 0

@@ -46,3 +46,6 @@ margin_top = 24.0
 margin_right = 1040.0
 margin_bottom = 44.0
 text = "quit"
+
+[connection signal="pressed" from="rows/buttons/sandbox" to="." method="_on_sandbox_pressed"]
+[connection signal="pressed" from="rows/buttons/quit" to="." method="_on_quit_pressed"]

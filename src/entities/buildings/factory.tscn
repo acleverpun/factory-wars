@@ -16,5 +16,3 @@ unitList = [ ExtResource( 4 ), ExtResource( 5 ) ]
 intent = 3
 
 [node name="io" parent="." instance=ExtResource( 1 )]
-inputs = 0
-outputs = 0
