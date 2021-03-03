@@ -1,6 +1,7 @@
 class_name Entity extends Node2D
 
-var model: Resource
+export(EntityModel) var model: EntityModel
+
 var components: Dictionary
 
 onready var id := get_instance_id()

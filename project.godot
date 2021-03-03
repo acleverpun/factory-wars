@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/entities/entity.gd"
 }, {
+"base": "Resource",
+"class": "EntityModel",
+"language": "GDScript",
+"path": "res://lib/models/entity.gd"
+}, {
 "base": "Building",
 "class": "Factory",
 "language": "GDScript",
@@ -69,7 +74,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/entities/units/unit.gd"
 }, {
-"base": "Resource",
+"base": "EntityModel",
 "class": "UnitModel",
 "language": "GDScript",
 "path": "res://lib/models/unit.gd"
@@ -94,6 +99,7 @@ _global_script_class_icons={
 "Cache": "",
 "Component": "",
 "Entity": "",
+"EntityModel": "",
 "Factory": "",
 "Fsm": "",
 "Grid": "",
