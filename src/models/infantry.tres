@@ -17,4 +17,5 @@ entity = ExtResource( 1 )
 name = "Infantry"
 description = "A little guy that walks on his own two feet."
 enabled = true
+color = Color( 0, 0, 0, 1 )
 cost = SubResource( 1 )
