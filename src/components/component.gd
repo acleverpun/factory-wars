@@ -1,5 +1,7 @@
 class_name Component extends Node
 
+export(bool) var enabled = true
+
 onready var entity := get_parent()
 onready var map: Map = get_tree().current_scene
 
@@ -11,3 +13,9 @@ func _ready() -> void:
 func proxy(target: Node, property: String, namespace: String = "proxy") -> void:
 	# TODO: proxy property at path from source to target
 	pass
+
+func enable(_enabled: bool) -> void:
+	enabled = _enabled
+
+func toggle() -> void:
+	enabled = not enabled
