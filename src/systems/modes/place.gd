@@ -2,7 +2,7 @@ extends Mode
 
 onready var entities := map.find_node("entities")
 
-func _init(data).(Mode.Type.Place, data): pass
+func _init(prior, data).(Mode.Type.Place, prior, data): pass
 
 func _ready() -> void:
 	var building: Building = self.data.entity

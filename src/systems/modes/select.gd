@@ -4,7 +4,7 @@ const group := "selecting"
 
 var selection: Entity
 
-func _init(data).(Mode.Type.Select, data): pass
+func _init(prior, data).(Mode.Type.Select, prior, data): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_select"):

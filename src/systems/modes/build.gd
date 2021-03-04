@@ -5,7 +5,7 @@ const factoryDialog := preload("res://src/gui/factoryDialog.tscn")
 
 var dialog: PopupDialog
 
-func _init(data).(Mode.Type.Build, data): pass
+func _init(prior, data).(Mode.Type.Build, prior, data): pass
 
 func _ready() -> void:
 	dialog = factoryDialog.instance()

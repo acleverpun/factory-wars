@@ -1,6 +1,6 @@
 extends Mode
 
-func _init(data).(Mode.Type.Move, data): pass
+func _init(prior, data).(Mode.Type.Move, prior, data): pass
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
