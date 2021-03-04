@@ -56,5 +56,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="item_activated" from="list" to="." method="_on_buy"]
 [connection signal="item_selected" from="list" to="." method="_on_change"]
 [connection signal="pressed" from="buy" to="." method="_on_buy"]

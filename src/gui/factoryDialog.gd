@@ -39,6 +39,6 @@ func _on_change(index: int) -> void:
 
 	buyButton.disabled = false
 
-func _on_buy() -> void:
+func _on_buy(index: int = -1) -> void:
 	var listItem = listItems[selected]
 	emit_signal("bought", listItem)
