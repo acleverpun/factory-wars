@@ -13,9 +13,9 @@ money = 5
 
 [resource]
 script = ExtResource( 2 )
-entity = ExtResource( 1 )
 name = "Infantry"
 description = "A little guy that walks on his own two feet."
+entity = ExtResource( 1 )
 enabled = true
 color = Color( 0.666667, 0.788235, 0.0823529, 1 )
 cost = SubResource( 1 )

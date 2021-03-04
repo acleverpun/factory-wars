@@ -13,9 +13,9 @@ money = 10
 
 [resource]
 script = ExtResource( 2 )
-entity = ExtResource( 1 )
 name = "Tank"
 description = "Big bad gun on wheels."
+entity = ExtResource( 1 )
 enabled = true
 color = Color( 0.129412, 0.501961, 0.858824, 1 )
 cost = SubResource( 1 )
