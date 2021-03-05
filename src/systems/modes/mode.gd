@@ -1,5 +1,9 @@
 class_name Mode extends Node
 
+signal cancel
+signal failure
+signal success
+
 enum Type {
 	None,
 	Select,
