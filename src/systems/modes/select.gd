@@ -23,7 +23,8 @@ func select(entity: Entity) -> void:
 	var intent: int = selecting.intent
 	if intent != Mode.Type.None:
 		var mode: Mode = modes.change(intent, { "entity": entity })
-		mode.connect("success", self, "_on_intent_success", [], CONNECT_ONESHOT)
+		mode.connect("success", self, "_on_intent_success", [ mode ], CONNECT_ONESHOT)
+		mode.connect("cancel", self, "_on_intent_cancel", [ mode ], CONNECT_ONESHOT)
 
 	# select new entity
 	selection = entity
@@ -39,6 +40,9 @@ func deselect() -> void:
 func isValid(entity: Entity) -> bool:
 	return entity and entity.is_in_group(group) and entity.find_node(group).enabled
 
-func _on_intent_success() -> void:
+func _on_intent_success(mode: Mode) -> void:
 	# disable selection for the rest of the round
 	selection.components.selecting.enable(false)
+
+func _on_intent_cancel(mode: Mode) -> void:
+	pass

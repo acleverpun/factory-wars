@@ -37,8 +37,8 @@ func change(State, value = null) -> Node:
 	var newState: Node = State.new(state, value)
 	newState.name = utils.lowerFirst(name)
 
-	var oldState: String = state.name if state != null else "NONE"
-	prints("Switching states: %s => %s" % [ oldState, newState.name ])
+	# var oldState: String = state.name if state != null else "NONE"
+	# print_debug("Switching states: %s => %s" % [ oldState, newState.name ])
 
 	state = newState
 	add_child(state)

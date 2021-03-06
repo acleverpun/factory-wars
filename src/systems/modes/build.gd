@@ -19,7 +19,7 @@ func _exit_tree() -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_released("ui_cancel"):
 		dialog.queue_free()
-		modes.change(Mode.Type.Select)
+		self.cancel()
 		return
 
 func _on_buy(unitModel) -> void:
@@ -29,8 +29,14 @@ func _on_buy(unitModel) -> void:
 
 	map.cache.subtract(unitModel.cost)
 
-	modes.change(Mode.Type.Place, {
+	var mode: Mode = modes.change(Mode.Type.Place, {
 		"entity": self.data.entity,
 		"model": unitModel,
 		"unitScene": UnitScene,
 	})
+
+	mode.connect("success", self, "_on_place_success", [ mode ], CONNECT_ONESHOT)
+
+func _on_place_success(mode: Mode) -> void:
+	# disable selection for the rest of the round
+	self.data.entity.components.selecting.enable(false)

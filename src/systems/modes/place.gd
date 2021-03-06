@@ -12,4 +12,5 @@ func _ready() -> void:
 	unit.position = grid.snapped(building.position) + grid.Down
 	entities.add_child(unit)
 
-	modes.change(Mode.Type.Select)
+	yield(get_tree(), "idle_frame")
+	self.succeed()

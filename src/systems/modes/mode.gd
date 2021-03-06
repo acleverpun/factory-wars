@@ -1,7 +1,6 @@
 class_name Mode extends Node
 
 signal cancel
-signal failure
 signal success
 
 enum Type {
@@ -32,3 +31,17 @@ func _init(_type = Type.None, _prior: Node = null, _data: Dictionary = {}):
 func setData(_data: Dictionary) -> void:
 	if _data == null: return
 	data = _data
+
+func succeed() -> void:
+	# change back to select mode
+	modes.change(Type.Select)
+
+	# emit signals
+	emit_signal("success")
+
+func cancel() -> void:
+	# change back to select mode
+	modes.change(Type.Select)
+
+	# emit signals
+	emit_signal("cancel")
