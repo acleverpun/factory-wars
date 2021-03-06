@@ -14,7 +14,7 @@ func proxy(target: Node, property: String, namespace: String = "proxy") -> void:
 	# TODO: proxy property at path from source to target
 	pass
 
-func enable(_enabled: bool) -> void:
+func enable(_enabled := true) -> void:
 	enabled = _enabled
 
 func toggle() -> void:
