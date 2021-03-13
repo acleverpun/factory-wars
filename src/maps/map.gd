@@ -1,6 +1,7 @@
 class_name Map extends Node2D
 
 export(Cache) var cache: Cache
+export(int) var players := 2
 
 # TYPE: map[Vector2][int]
 var entityMap := {}
@@ -52,6 +53,6 @@ func updateEntityMap() -> void:
 		var cell := grid.toGrid(entity.position)
 		entityMap[cell] = entity.get_instance_id()
 
-func _on_round_changed(currentRound: int) -> void:
+func _on_round_changed(currentRound: int, currentPlayer: int) -> void:
 	cache.add(source.value)
-	prints("map: round changed", currentRound, cache.money)
+	prints("map: round changed", currentRound, currentPlayer, cache.money)

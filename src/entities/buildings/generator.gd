@@ -7,7 +7,7 @@ onready var source: Wrapper = $source
 func _ready() -> void:
 	events.on("round:changed", self, "_on_round_changed")
 
-func _on_round_changed(currentRound: int) -> void:
+func _on_round_changed(currentRound: int, player: int) -> void:
 	cache.add(source.value)
 
 func _on_selected() -> void:
