@@ -1,6 +1,8 @@
 class_name Entity extends Node2D
 
 export(EntityModel) var model: EntityModel
+
+# TODO: not sure which to use
 export(int) var commanderId
 export(Commander) var commander: Commander
 
