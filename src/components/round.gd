@@ -1,23 +1,23 @@
 extends Node
 
-signal changed(value)
+signal changed(_turn)
 
-var value: int = 0
-var player: int = 0
+var _commander: int = 0
+var _turn: int = 0
 
 onready var map: Map = get_node("/root/map")
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.debug"):
-		prints(player, value)
+		prints(_commander, _turn)
 		prints(map.cache)
 	elif Input.is_action_just_pressed("ui_accept"):
-		nextRound()
+		nextTurn()
 
-func nextRound() -> void:
-	player = (player + 1) % map.players
-	if player == 0:
-		value += 1
+func nextTurn() -> void:
+	_commander = (_commander + 1) % len(map.commanders)
+	if _commander == 0:
+		_turn += 1
 
-	emit_signal("changed", value, player)
-	events.emit_signal("round:changed", value, player)
+	emit_signal("changed", _turn, _commander)
+	events.emit_signal("round:changed", _turn, _commander)
