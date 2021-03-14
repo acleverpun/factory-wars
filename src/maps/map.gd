@@ -3,6 +3,8 @@ class_name Map extends Node2D
 export(Array, Commander) var commanders: Array
 export(Cache) var cache: Cache
 
+var commander: Commander
+
 # TYPE: map[Vector2][int]
 var entityMap := {}
 
@@ -10,6 +12,9 @@ var entityMap := {}
 var positionMap := {}
 
 onready var source: Wrapper = $source
+
+func _ready() -> void:
+	commander = commanders[0]
 
 # TODO: consider removing
 # NOTE: would be in a generic storage class
@@ -53,6 +58,6 @@ func updateEntityMap() -> void:
 		var cell := grid.toGrid(entity.position)
 		entityMap[cell] = entity.get_instance_id()
 
-func _on_round_changed(turn: int, commander: int) -> void:
-	cache.add(source.value)
-	prints("map: round changed", turn, commander, cache.money)
+func _on_round_changed(turn: int, commanderIndex: int) -> void:
+	commander = commanders[commanderIndex]
+	commander.cache.add(source.value)

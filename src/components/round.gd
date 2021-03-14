@@ -10,7 +10,7 @@ onready var map: Map = get_node("/root/map")
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("game.debug"):
 		prints(_commander, _turn)
-		prints(map.cache)
+		prints(map.commander.cache)
 	elif Input.is_action_just_pressed("ui_accept"):
 		nextTurn()
 
