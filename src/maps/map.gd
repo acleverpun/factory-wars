@@ -63,5 +63,6 @@ func updateEntityMap() -> void:
 
 func _on_turn_changed(turn: int, commanderId: int) -> void:
 	commander = commanders[commanderId]
-	commander.cache.add(source.value)
+	if turn > 0:
+		commander.cache.add(source.value)
 	prints("turn", turn, commander.name)
