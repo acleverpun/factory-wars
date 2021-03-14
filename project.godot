@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://lib/models/cache.gd"
 }, {
+"base": "Resource",
+"class": "Commander",
+"language": "GDScript",
+"path": "res://lib/models/commander.gd"
+}, {
 "base": "Node",
 "class": "Component",
 "language": "GDScript",
@@ -97,6 +102,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Building": "",
 "Cache": "",
+"Commander": "",
 "Component": "",
 "Entity": "",
 "EntityModel": "",

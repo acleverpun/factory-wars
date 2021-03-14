@@ -1,5 +1,6 @@
 class_name Map extends Node2D
 
+export(Array, Commander) var commanders: Array
 export(Cache) var cache: Cache
 export(int) var players := 2
 

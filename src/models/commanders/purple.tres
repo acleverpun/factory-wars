@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://lib/models/commander.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Purple"
+color = Color( 0.584314, 0.054902, 0.913725, 1 )
