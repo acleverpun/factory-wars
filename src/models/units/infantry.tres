@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://src/entities/units/unit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lib/models/unit.gd" type="Script" id=2]
 [ext_resource path="res://lib/models/cache.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/infantry.png" type="Texture" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
@@ -15,6 +16,7 @@ money = 5
 script = ExtResource( 2 )
 name = "Infantry"
 description = "A little guy that walks on his own two feet."
+texture = ExtResource( 4 )
 entity = ExtResource( 1 )
 enabled = true
 color = Color( 0.666667, 0.788235, 0.0823529, 1 )

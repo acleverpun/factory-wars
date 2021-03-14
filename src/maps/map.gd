@@ -3,6 +3,9 @@ class_name Map extends Node2D
 export(Array, Commander) var commanders: Array
 export(Cache) var cache: Cache
 
+# DEBUG: used for seeing which resources are available for exports
+export(Resource) var resource
+
 var commander: Commander
 
 # TYPE: map[Vector2][int]
