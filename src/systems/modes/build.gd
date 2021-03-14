@@ -38,5 +38,5 @@ func _on_buy(unitModel) -> void:
 	mode.connect("success", self, "_on_place_success", [ mode ], CONNECT_ONESHOT)
 
 func _on_place_success(mode: Mode) -> void:
-	# disable selection for the rest of the round
+	# disable selection for the rest of the turn
 	self.data.entity.components.selecting.enable(false)

@@ -41,7 +41,7 @@ func isValid(entity: Entity) -> bool:
 	return entity and entity.is_in_group(group) and entity.find_node(group).enabled
 
 func _on_intent_success(mode: Mode) -> void:
-	# disable selection for the rest of the round
+	# disable selection for the rest of the turn
 	selection.components.selecting.enable(false)
 
 func _on_intent_cancel(mode: Mode) -> void:

@@ -20,4 +20,4 @@ func nextTurn() -> void:
 		_turn += 1
 
 	emit_signal("changed", _turn, _commander)
-	events.emit_signal("round:changed", _turn, _commander)
+	events.emit_signal("turn:changed", _turn, _commander)

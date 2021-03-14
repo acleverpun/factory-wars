@@ -5,9 +5,9 @@ export(Cache) var cache: Cache
 onready var source: Wrapper = $source
 
 func _ready() -> void:
-	events.on("round:changed", self, "_on_round_changed")
+	events.on("turn:changed", self, "_on_turn_changed")
 
-func _on_round_changed(turn: int, commander: int) -> void:
+func _on_turn_changed(turn: int, commander: int) -> void:
 	cache.add(source.value)
 
 func _on_selected() -> void:
