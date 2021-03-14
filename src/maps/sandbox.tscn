@@ -9,7 +9,7 @@
 [ext_resource path="res://src/entities/units/unit.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/components/source.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/maps/map.gd" type="Script" id=9]
-[ext_resource path="res://src/models/infantry.tres" type="Resource" id=10]
+[ext_resource path="res://src/models/units/infantry.tres" type="Resource" id=10]
 [ext_resource path="res://src/models/commanders/purple.tres" type="Resource" id=11]
 [ext_resource path="res://src/models/commanders/red.tres" type="Resource" id=12]
 
