@@ -19,5 +19,4 @@ description = "Big bad gun on wheels."
 texture = ExtResource( 4 )
 entity = ExtResource( 1 )
 enabled = true
-color = Color( 0.129412, 0.501961, 0.858824, 1 )
 cost = SubResource( 1 )

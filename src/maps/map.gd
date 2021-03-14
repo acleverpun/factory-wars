@@ -61,6 +61,7 @@ func updateEntityMap() -> void:
 		var cell := grid.toGrid(entity.position)
 		entityMap[cell] = entity.get_instance_id()
 
-func _on_turn_changed(turn: int, commanderIndex: int) -> void:
-	commander = commanders[commanderIndex]
+func _on_turn_changed(turn: int, commanderId: int) -> void:
+	commander = commanders[commanderId]
 	commander.cache.add(source.value)
+	prints("turn", turn, commander.name)
