@@ -1,3 +1,4 @@
+tool
 class_name Entity extends Node2D
 
 export(EntityModel) var model: EntityModel
