@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/components/turn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://lib/models/cache.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/models/units/infantry.tres" type="Resource" id=10]
 [ext_resource path="res://src/models/commanders/purple.tres" type="Resource" id=11]
 [ext_resource path="res://src/models/commanders/red.tres" type="Resource" id=12]
+[ext_resource path="res://src/models/units/tank.tres" type="Resource" id=13]
 
 [sub_resource type="Resource" id=1]
 resource_local_to_scene = true
@@ -52,6 +53,11 @@ cache = SubResource( 2 )
 position = Vector2( 496, 368 )
 model = ExtResource( 10 )
 commander = ExtResource( 11 )
+
+[node name="unit-2" parent="entities" instance=ExtResource( 7 )]
+position = Vector2( 400, 400 )
+model = ExtResource( 13 )
+commander = ExtResource( 12 )
 
 [node name="hud" parent="." instance=ExtResource( 6 )]
 
