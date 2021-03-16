@@ -8,10 +8,12 @@ var _turn: int = 0
 onready var map: Map = get_node("/root/map")
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("game.debug"):
+	if not event.is_action_type(): return
+
+	if Input.is_action_just_released("game.debug"):
 		prints(_commander, _turn)
 		prints(map.commander.cache)
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_released("ui_accept"):
 		nextTurn()
 
 func nextTurn() -> void:

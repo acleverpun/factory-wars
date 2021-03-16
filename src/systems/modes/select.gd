@@ -7,6 +7,8 @@ var selection: Entity
 func _init(prior, data).(Mode.Type.Select, prior, data): pass
 
 func _input(event: InputEvent) -> void:
+	if not event.is_action_type(): return
+
 	if Input.is_action_just_released("ui_select"):
 		var gridPos := grid.toGrid(event.position)
 		var entity := self.map.getEntity(gridPos)
