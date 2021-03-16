@@ -44,9 +44,11 @@ value = SubResource( 1 )
 
 [node name="factory" parent="entities" instance=ExtResource( 3 )]
 position = Vector2( 304, 272 )
+commander = ExtResource( 11 )
 
 [node name="generator" parent="entities" instance=ExtResource( 4 )]
 position = Vector2( 272, 272 )
+commander = ExtResource( 11 )
 cache = SubResource( 2 )
 
 [node name="unit" parent="entities" instance=ExtResource( 7 )]

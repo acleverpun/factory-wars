@@ -23,7 +23,7 @@ func _ready() -> void:
 	call_deferred("setup")
 
 func setup() -> void:
-	if commander:
+	if commander and sprite:
 		# set sprite color
 		sprite.modulate = commander.color
 

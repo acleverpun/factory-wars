@@ -1,6 +1,6 @@
 extends Node
 
-signal changed(_turn)
+signal changed(_turn, _commander)
 
 var _commander: int = 0
 var _turn: int = 0
