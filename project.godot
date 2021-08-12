@@ -14,6 +14,10 @@ config/name="Factory Wars"
 run/main_scene="res://src/maps/map.tscn"
 config/icon="res://assets/icons/icon.png"
 
+[autoload]
+
+mappings="*res://src/systems/mappings.gd"
+
 [debug]
 
 gdscript/completion/autocomplete_setters_and_getters=true
@@ -33,6 +37,24 @@ node_naming/name_casing=1
 [filesystem]
 
 import/fbx/use_fbx=false
+
+[input]
+
+game.close={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"pressed":false,"keycode":81,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
+game.restart={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":true,"pressed":false,"keycode":82,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
+game.debug={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"pressed":false,"keycode":16777220,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [rendering]
 
