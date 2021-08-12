@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7r4nohothmvm"]
+
+[ext_resource type="Script" path="res://src/scenes/main.gd" id="1"]
+
+[node name="main" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource( "1" )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rows" type="VBoxContainer" parent="."]
+offset_left = 120.0
+offset_top = 80.0
+offset_right = 1160.0
+offset_bottom = 640.0
+script = null
+
+[node name="titleContainer" type="MarginContainer" parent="rows"]
+offset_right = 1040.0
+offset_bottom = 278.0
+size_flags_vertical = 3
+script = null
+
+[node name="title" type="RichTextLabel" parent="rows/titleContainer"]
+offset_right = 1040.0
+offset_bottom = 278.0
+text = "Factory Wars"
+custom_effects = []
+structured_text_bidi_override_options = []
+script = null
+
+[node name="buttons" type="VBoxContainer" parent="rows"]
+offset_top = 282.0
+offset_right = 1040.0
+offset_bottom = 560.0
+size_flags_vertical = 3
+script = null
+
+[node name="sandbox" type="Button" parent="rows/buttons"]
+offset_right = 1040.0
+offset_bottom = 29.0
+text = "sandbox"
+script = null
+
+[node name="quit" type="Button" parent="rows/buttons"]
+offset_top = 33.0
+offset_right = 1040.0
+offset_bottom = 62.0
+text = "quit"
+script = null
+
+[connection signal="pressed" from="rows/buttons/sandbox" to="." method="_on_sandbox_pressed"]
+[connection signal="pressed" from="rows/buttons/quit" to="." method="_on_quit_pressed"]
