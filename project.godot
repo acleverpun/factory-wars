@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[{
+"base": &"Entity",
+"class": &"Building",
+"language": &"GDScript",
+"path": "res://src/entities/buildings/building.gd"
+}, {
+"base": &"Node",
+"class": &"Component",
+"language": &"GDScript",
+"path": "res://src/components/component.gd"
+}, {
+"base": &"Node2D",
+"class": &"Entity",
+"language": &"GDScript",
+"path": "res://src/entities/entity.gd"
+}]
+_global_script_class_icons={
+"Building": "",
+"Component": "",
+"Entity": ""
+}
+
 [application]
 
 config/name="Factory Wars"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv2g5p1r4immn"]
+
+[ext_resource type="Script" path="res://src/entities/buildings/generator.gd" id="1_ieeno"]
+
+[node name="generator" type="Polygon2D"]
+color = Color(0.486275, 0.180392, 1, 1)
+polygon = PackedVector2Array(0, 0, 0, -16, 16, -16, 16, 0)
+polygons = []
+bones = []
+script = ExtResource( "1_ieeno" )
