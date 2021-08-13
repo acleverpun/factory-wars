@@ -8,9 +8,6 @@ signal changed(turn, team)
 var team := 0
 var turn := 0
 
-func _setup() -> void:
-	prints("ready", self.entity)
-
 func _unhandled_key_input(event: InputEventKey) -> void:
 	if not event.is_action_type(): return
 
@@ -22,4 +19,4 @@ func nextTurn() -> void:
 	if team == 0:
 		turn += 1
 
-	emit_signal("changed", turn, team)
+	emit_signal("changed", team, turn)

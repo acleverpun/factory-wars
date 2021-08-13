@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg0lirmuvyho6"]
+[gd_scene load_steps=4 format=3 uid="uid://dg0lirmuvyho6"]
 
 [ext_resource type="PackedScene" uid="uid://jaqrgnbpurut" path="res://src/components/turn.tscn" id="1_4l07v"]
 [ext_resource type="PackedScene" uid="uid://cv2g5p1r4immn" path="res://src/entities/buildings/generator.tscn" id="1_5hndv"]
+[ext_resource type="Script" path="res://src/maps/map.gd" id="1_kxicp"]
 
 [node name="map" type="Node2D"]
-script = null
+script = ExtResource( "1_kxicp" )
 
 [node name="components" type="Node" parent="."]
 script = null
@@ -15,3 +16,5 @@ script = null
 position = Vector2(384, 256)
 polygons = []
 bones = []
+
+[connection signal="changed" from="components/turn" to="." method="_on_turn_changed"]

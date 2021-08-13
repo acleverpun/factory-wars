@@ -1,6 +1,8 @@
 extends Building
 
 @export var value: int
+@export var gain := 20
 
-func _ready():
-	pass
+func setup(turn: int):
+	value += gain
+	prints("generator setup", turn, team, value)
