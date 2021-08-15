@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var model: Stage
+
 func _on_turn_changed(team: int, turn: int) -> void:
 	prints("team: %s | turn: %s" % [ team, turn ])
 

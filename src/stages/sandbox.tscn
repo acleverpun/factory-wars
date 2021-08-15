@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://mss3jaqoedti"]
+
+[ext_resource type="Script" path="res://src/stages/stage.gd" id="1_yfgr1"]
+[ext_resource type="PackedScene" path="res://src/components/turn.tscn" id="2_j4e7h"]
+[ext_resource type="PackedScene" path="res://src/entities/buildings/generator.tscn" id="3_soi7a"]
+
+[node name="stage" type="Node2D"]
+script = ExtResource( "1_yfgr1" )
+
+[node name="components" type="Node" parent="."]
+script = null
+
+[node name="turn" parent="components" instance=ExtResource( "2_j4e7h" )]
+
+[node name="generator" parent="." instance=ExtResource( "3_soi7a" )]
+position = Vector2(384, 256)
+polygons = []
+bones = []
+
+[connection signal="changed" from="components/turn" to="." method="_on_turn_changed"]

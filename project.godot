@@ -23,17 +23,23 @@ _global_script_classes=[{
 "class": &"Entity",
 "language": &"GDScript",
 "path": "res://src/entities/entity.gd"
+}, {
+"base": &"Resource",
+"class": &"Stage",
+"language": &"GDScript",
+"path": "res://src/models/stage.gd"
 }]
 _global_script_class_icons={
 "Building": "",
 "Component": "",
-"Entity": ""
+"Entity": "",
+"Stage": ""
 }
 
 [application]
 
 config/name="Factory Wars"
-run/main_scene="res://src/maps/sandbox.tscn"
+run/main_scene="res://src/stages/sandbox.tscn"
 config/icon="res://assets/icons/icon.png"
 
 [autoload]
