@@ -134,6 +134,7 @@ grid="*res://lib/grid.gd"
 
 [debug]
 
+gdscript/completion/autocomplete_setters_and_getters=true
 gdscript/warnings/unused_argument=false
 gdscript/warnings/incompatible_ternary=false
 gdscript/warnings/unused_signal=false
