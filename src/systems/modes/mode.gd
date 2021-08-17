@@ -20,7 +20,7 @@ var prior: Node
 # arbitrary data
 var data: Dictionary
 
-onready var map: Map = get_tree().current_scene
+onready var stage: Stage = get_tree().current_scene
 onready var modes: Modes = get_parent()
 
 func _init(_type = Type.None, _prior: Node = null, _data: Dictionary = {}):

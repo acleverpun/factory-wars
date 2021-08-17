@@ -1,5 +1,6 @@
-class_name Map extends Node2D
+class_name Stage extends Node2D
 
+export(StageModel) var model: StageModel
 export(Array, Commander) var commanders: Array
 export(Cache) var cache: Cache
 

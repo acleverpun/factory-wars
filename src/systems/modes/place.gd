@@ -1,6 +1,6 @@
 extends Mode
 
-onready var entities := map.find_node("entities")
+onready var entities := self.stage.find_node("entities")
 
 func _init(prior, data).(Mode.Type.Place, prior, data): pass
 
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 	# set data
 	unit.model = self.data.model
-	unit.commander = map.commander
+	unit.commander = self.stage.commander
 
 	# set position
 	unit.position = grid.snapped(building.position) + grid.Down

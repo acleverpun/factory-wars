@@ -11,7 +11,7 @@ func _ready() -> void:
 	dialog = factoryDialog.instance()
 	dialog.setData(self.data)
 	dialog.connect("bought", self, "_on_buy")
-	map.add_child(dialog)
+	self.stage.add_child(dialog)
 
 func _exit_tree() -> void:
 	dialog.queue_free()
@@ -25,11 +25,11 @@ func _input(event: InputEvent) -> void:
 		return
 
 func _on_buy(unitModel) -> void:
-	if not map.commander.cache.contains(unitModel.cost):
+	if not self.stage.commander.cache.contains(unitModel.cost):
 		prints("Nope. Not enough money.")
 		return
 
-	map.commander.cache.subtract(unitModel.cost)
+	self.stage.commander.cache.subtract(unitModel.cost)
 
 	var mode: Mode = modes.change(Mode.Type.Place, {
 		"entity": self.data.entity,

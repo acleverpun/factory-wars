@@ -1,0 +1,66 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://lib/models/cache.gd" type="Script" id=1]
+[ext_resource path="res://src/stages/stage.gd" type="Script" id=2]
+[ext_resource path="res://src/components/turn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/entities/buildings/factory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/entities/units/unit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/data/commanders/red.tres" type="Resource" id=6]
+[ext_resource path="res://src/data/commanders/purple.tres" type="Resource" id=7]
+[ext_resource path="res://src/data/units/tank.tres" type="Resource" id=8]
+[ext_resource path="res://src/data/units/infantry.tres" type="Resource" id=9]
+[ext_resource path="res://src/entities/buildings/generator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/systems/modes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/components/source.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/gui/hud.tscn" type="PackedScene" id=13]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+copper = 0
+food = 0
+iron = 0
+money = 5
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 1 )
+copper = 0
+food = 0
+iron = 0
+money = 0
+
+[node name="stage" type="Node2D"]
+script = ExtResource( 2 )
+commanders = [ ExtResource( 7 ), ExtResource( 6 ) ]
+
+[node name="turn" parent="." instance=ExtResource( 3 )]
+
+[node name="modes" parent="." instance=ExtResource( 11 )]
+
+[node name="source" parent="." instance=ExtResource( 12 )]
+value = SubResource( 1 )
+
+[node name="entities" type="Node" parent="."]
+
+[node name="factory" parent="entities" instance=ExtResource( 4 )]
+position = Vector2( 304, 272 )
+commander = ExtResource( 7 )
+
+[node name="generator" parent="entities" instance=ExtResource( 10 )]
+position = Vector2( 272, 272 )
+commander = ExtResource( 7 )
+cache = SubResource( 2 )
+
+[node name="unit" parent="entities" instance=ExtResource( 5 )]
+position = Vector2( 496, 368 )
+model = ExtResource( 9 )
+commander = ExtResource( 7 )
+
+[node name="unit-2" parent="entities" instance=ExtResource( 5 )]
+position = Vector2( 400, 400 )
+model = ExtResource( 8 )
+commander = ExtResource( 6 )
+
+[node name="hud" parent="." instance=ExtResource( 13 )]
+
+[connection signal="changed" from="turn" to="." method="_on_turn_changed"]

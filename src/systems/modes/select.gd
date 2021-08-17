@@ -11,7 +11,7 @@ func _input(event: InputEvent) -> void:
 
 	if Input.is_action_just_released("ui_select"):
 		var gridPos := grid.toGrid(event.position)
-		var entity := self.map.getEntity(gridPos)
+		var entity := self.stage.getEntity(gridPos)
 
 		# Check for selectable nodes
 		if isValid(entity):

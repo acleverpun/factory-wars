@@ -22,7 +22,7 @@ func setup() -> void:
 	# # make connections
 	# for dir in types.Direction:
 	# 	if inputs & types.DirectionFlags[dir] or outputs & types.DirectionFlags[dir]:
-	# 		var otherId = self.map.getData(position + Grid[dir])
+	# 		var otherId = self.stage.getData(position + Grid[dir])
 	# 		if !otherId: continue
   #
 	# 		var otherIO: IO = instance_from_id(otherId)

@@ -18,8 +18,8 @@ func move(entity: Node2D, position: Vector2) -> void:
 	# set new position
 	entity.position = grid.snapped(position)
 
-	# update map data
-	self.map.updateEntity(entity)
+	# update stage data
+	self.stage.updateEntity(entity)
 
 	# emit signals
 	entity.find_node("moving").emit_signal("moved")
@@ -28,5 +28,5 @@ func move(entity: Node2D, position: Vector2) -> void:
 
 func isValid(entity: Entity, position: Vector2) -> bool:
 	var gridPos := grid.toGrid(position)
-	var possibleEntity := self.map.getEntity(gridPos)
+	var possibleEntity := self.stage.getEntity(gridPos)
 	return possibleEntity == null and possibleEntity != entity

@@ -59,11 +59,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/io.gd"
 }, {
-"base": "Node2D",
-"class": "Map",
-"language": "GDScript",
-"path": "res://src/maps/map.gd"
-}, {
 "base": "Node",
 "class": "Mode",
 "language": "GDScript",
@@ -73,6 +68,16 @@ _global_script_classes=[ {
 "class": "Modes",
 "language": "GDScript",
 "path": "res://src/systems/modes.gd"
+}, {
+"base": "Node2D",
+"class": "Stage",
+"language": "GDScript",
+"path": "res://src/stages/stage.gd"
+}, {
+"base": "Resource",
+"class": "StageModel",
+"language": "GDScript",
+"path": "res://lib/models/stage.gd"
 }, {
 "base": "Entity",
 "class": "Unit",
@@ -110,9 +115,10 @@ _global_script_class_icons={
 "Fsm": "",
 "Grid": "",
 "IO": "",
-"Map": "",
 "Mode": "",
 "Modes": "",
+"Stage": "",
+"StageModel": "",
 "Unit": "",
 "UnitModel": "",
 "Wrapper": "",
@@ -123,7 +129,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Factory Wars"
-run/main_scene="res://src/maps/sandbox.tscn"
+run/main_scene="res://src/stages/sandbox.tscn"
 config/icon="res://assets/icons/icon.png"
 
 [autoload]
