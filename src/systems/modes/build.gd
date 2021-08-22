@@ -1,14 +1,14 @@
 extends Mode
 
 const UnitScene := preload("res://src/entities/units/unit.tscn")
-const factoryDialog := preload("res://src/gui/factoryDialog.tscn")
+const FactoryDialog := preload("res://src/gui/factoryDialog.tscn")
 
 var dialog: PopupDialog
 
 func _init(prior, data).(Mode.Type.Build, prior, data): pass
 
 func _ready() -> void:
-	dialog = factoryDialog.instance()
+	dialog = FactoryDialog.instance()
 	dialog.setData(self.data)
 	dialog.connect("bought", self, "_on_buy")
 	self.stage.add_child(dialog)

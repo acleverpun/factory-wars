@@ -4,5 +4,4 @@ export(String) var name
 
 export var teams := 2
 
-# TODO
-# export var map
+export(PackedScene) var map
