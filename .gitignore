@@ -1,0 +1,20 @@
+# godot
+/.godot/
+/.import/
+/export.cfg
+/export_presets.cfg
+
+# languages
+
+## mono
+.mono/
+/mono_crash.*
+data_*/
+
+## nim
+.nimcache
+/_dlls
+/nakefile
+/nakefile.json
+/src/godotapi
+nimcache
