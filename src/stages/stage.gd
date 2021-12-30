@@ -5,7 +5,7 @@ extends Node2D
 
 @export var description: String
 
-@export var map: PackedScene
+@onready var map = $"map"
 
 func _ready() -> void:
 	if Engine.is_editor_hint() and not self.has_node("entities"):
