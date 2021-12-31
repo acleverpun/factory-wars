@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfrlepyt6vd6v"]
+[gd_scene load_steps=5 format=3 uid="uid://dfrlepyt6vd6v"]
 
 [ext_resource type="Script" path="res://src/stages/stage.gd" id="1_1rqa7"]
 [ext_resource type="PackedScene" uid="uid://bk8b7pof1pwyr" path="res://src/maps/tiny.tscn" id="2_npgxl"]
 [ext_resource type="Script" path="res://src/components/camera.gd" id="3_dk0qs"]
+[ext_resource type="PackedScene" uid="uid://xxjyibp3fpi1" path="res://src/entities/units/unit.tscn" id="4_ojuue"]
 
 [node name="stage" type="Node2D"]
 script = ExtResource( "1_1rqa7" )
@@ -11,8 +12,14 @@ description = "Playground for development"
 
 [node name="entities" type="Node" parent="."]
 
-[node name="map" parent="." instance=ExtResource( "2_npgxl" )]
+[node name="unit" parent="entities" instance=ExtResource( "4_ojuue" )]
+position = Vector2(32, -96)
+
+[node name="unit-2" parent="entities" instance=ExtResource( "4_ojuue" )]
+position = Vector2(-160, 32)
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
 script = ExtResource( "3_dk0qs" )
+
+[node name="map" parent="." instance=ExtResource( "2_npgxl" )]
