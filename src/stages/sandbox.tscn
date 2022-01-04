@@ -13,13 +13,14 @@ description = "Playground for development"
 [node name="entities" type="Node" parent="."]
 
 [node name="unit" parent="entities" instance=ExtResource( "4_ojuue" )]
-position = Vector2(32, -96)
+position = Vector2(-40, 40)
 
 [node name="unit-2" parent="entities" instance=ExtResource( "4_ojuue" )]
-position = Vector2(-160, 32)
+position = Vector2(-24, 40)
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
 script = ExtResource( "3_dk0qs" )
 
 [node name="map" parent="." instance=ExtResource( "2_npgxl" )]
+layer_0/name = "ground"

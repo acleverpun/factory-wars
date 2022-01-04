@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://xxjyibp3fpi1"]
+[gd_scene load_steps=3 format=3 uid="uid://xxjyibp3fpi1"]
 
 [ext_resource type="Script" path="res://src/entities/units/unit.gd" id="1_ftvy0"]
+[ext_resource type="Texture2D" uid="uid://d1mwqa4b7b1x7" path="res://assets/sprites/entities/units/tank.png" id="2_vwffx"]
 
 [node name="unit" type="Node2D"]
 script = ExtResource( "1_ftvy0" )
 
 [node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource( "2_vwffx" )
 region_rect = Rect2(0, 1024, 32, 32)
