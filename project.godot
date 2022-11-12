@@ -8,6 +8,22 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": &"Node2D",
+"class": &"Unit",
+"language": &"GDScript",
+"path": "res://src/entities/units/unit.gd"
+}, {
+"base": &"Resource",
+"class": &"UnitModel",
+"language": &"GDScript",
+"path": "res://lib/models/unit.gd"
+}]
+_global_script_class_icons={
+"Unit": "",
+"UnitModel": ""
+}
+
 [application]
 
 config/name="Factory Wars"
@@ -21,14 +37,14 @@ mappings="*res://src/systems/mappings.gd"
 
 [debug]
 
-gdscript/completion/autocomplete_setters_and_getters=true
 gdscript/warnings/unused_parameter=false
+gdscript/completion/autocomplete_setters_and_getters=true
 
 [display]
 
+window/size/resizable=false
 window/size/width=1280
 window/size/height=720
-window/size/resizable=false
 
 [editor]
 

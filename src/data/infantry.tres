@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://wv7ap0hdg24h"]
+
+[ext_resource type="Script" path="res://lib/models/unit.gd" id="1_am120"]
+
+[resource]
+script = ExtResource( "1_am120" )
+name = null
